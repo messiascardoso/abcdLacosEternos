@@ -1,0 +1,30 @@
+<!-- public/index.html -->
+<!doctype html>
+<html ng-app="americanExperian">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <title>Togo</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic%22">
+  <link rel="stylesheet" href="css/styles.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+ <div class="wrapper">
+
+  <div ui-view></div>
+ </div>
+  <script src="js/libs.min.js"></script>
+  <script>
+    $.widget.bridge('uibutton', $.ui.button);
+  </script>
+  <script src="js/scripts.min.js"></script>
+</body>
+
+
+</html>

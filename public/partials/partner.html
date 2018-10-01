@@ -1,0 +1,243 @@
+
+<div class="box box-info">
+    <div class="box-header with-border">
+        <h3 class="box-title">Register Partner</h3>
+    </div>
+
+    <div class="box-body">
+        <form name="formulario" novalidate ng-submit="submeter()" class="ng-invalid ng-invalid-required ng-valid-maxlength ng-dirty ng-valid-parse ng-invalid-email ng-invalid-pattern ng-invalid-minlength label-custon-togo">
+            <div class="row">
+                <div class="col-xs-12 col-md-2">
+                    <div class="form-group label-formulario">
+                        <label for="taxid">Code</label>
+                        <input type="text" id="_id" class="form-control" name="_id" ng-model="partner._id" disabled>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group label-formulario">
+                        <label for="dba">DBA</label> <span>*</span>
+                        <input type="text" class="form-control" name="dba" ng-model="partner.dba" required>
+                        <span class="form‐control alert‐danger" ng-show="formulario.$submitted && formulario.nome.$error.required">
+                                 Name required!
+                    </span>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    <div class="form-group label-formulario">
+                        <label for="taxid">TAX ID</label>
+                        <input type="text" id="taxid" class="form-control" name="taxid" ng-model="partner.taxid">
+                    </div>
+                </div>
+                 
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group label-formulario">
+                        <label for="address">Address</label> <span>*</span>
+                        <input type="text" id="address" class="form-control" name="address" ng-model="partner.address" required>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group label-formulario">
+                        <label for="zipcode">City</label> <span>*</span>
+                        <input type="text" id="zipcode" class="form-control" name="city" ng-model="partner.city" required>
+
+                        <span class="form‐control alert‐danger" ng-show="formulario.$submitted && formulario.zipcode.$error.required">
+                                 Campo Obrigatório 
+                               </span>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group label-formulario">
+                        <label for="zipcode">Zip code</label> <span>*</span>
+                        <input type="text" id="zipcode" class="form-control" name="zipcode" ng-model="partner.zipcode" required>
+
+                        <span class="form‐control alert‐danger" ng-show="formulario.$submitted && formulario.zipcode.$error.required">
+                                 Campo Obrigatório 
+                               </span>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    <div class="form-group label-formulario">
+                        <label for="latitude">Coordinates - Latitude</label> <span>*</span>
+                        <input type="number" id="latitude" class="form-control" name="latitude" ng-model="partner.localizacao.latitude" placeholder="Latitude"
+                            required>
+                        <span class="form‐control alert‐danger" ng-show="formulario.$submitted && formulario.zipcode.$error.required">
+                    Campo Obrigatório 
+                               </span>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    <div class="form-group label-formulario">
+                        <label for="longitude">Longitude</label><span>*</span>
+                        <input type="number" id="longitude" class="form-control" name="longitude" ng-model="partner.localizacao.longitude" placeholder="Longitude"
+                            required>
+                        <span class="form‐control alert‐danger" ng-show="formulario.$submitted && formulario.zipcode.$error.required">
+                    Campo Obrigatório 
+                               </span>
+                    </div>
+                </div>
+
+
+                <div class="col-xs-12 col-md-12">
+                    <div class="form-group label-formulario">
+                        <label for="site">Site</label>
+                        <input type="text" id="site" class="form-control" name="ano" ng-model="partner.site">
+                        <span class="form‐control alert‐danger" ng-show="formulario.$submitted && formulario.ano.$error.required">
+                                 Campo Obrigatório 
+                        </span>
+                    </div>
+                </div>
+           
+
+                <!--Contato 1-->
+                <div class="col-xs-12 col-md-4 ">
+                    <div class="form-group label-formulario">
+                        <label for="contact">Contact 1</label>
+                        <input type="text" id="contact" class="form-control" name="contact" ng-model="partner.contact">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-2">
+                    <div class="form-group label-formulario">
+                    <label for="type">Type</label>
+                    <select class="form-control" id="type" ng-model="partner.type">
+                                        <option>Owner</option>
+                                        <option>Manager</option>
+                                        <option>Supervisor</option>                                    
+                                    </select>                
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    <div class="form-group label-formulario">
+                        <label for="phone1">Phone 1</label>
+                        <input type="text" id="phone1" class="form-control" name="phone1" ng-model="partner.phone1">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    <div class="form-group label-formulario">
+                        <label for="phone2">Phone 2</label>
+                        <input type="text" id="phone2" class="form-control" name="phone2" ng-model="partner.phone2">
+                    </div>
+                </div>
+
+                <!--Contato 2-->
+                     <div class="col-xs-12 col-md-4">
+                    <div class="form-group label-formulario">
+                        <label for="contact2">Contact 2</label>
+                        <input type="text" id="contact2" class="form-control" name="contact2" ng-model="partner.contact2">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-2">
+                    <div class="form-group label-formulario">
+                    <label for="type2">Type</label>
+                    <select class="form-control" id="type2" ng-model="partner.type2">
+                                        <option>Owner</option>
+                                        <option>Manager</option>
+                                        <option>Supervisor</option>                                    
+                                    </select>                
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    <div class="form-group label-formulario">
+                        <label for="phone1c2">Phone 1</label>
+                        <input type="text" id="phone1c2" class="form-control" name="phone1c2" ng-model="partner.phone1c2">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    <div class="form-group label-formulario">
+                        <label for="phone2c2">Phone 2</label>
+                        <input type="text" id="phone2c2" class="form-control" name="phone2c2" ng-model="partner.phone2c2">
+                    </div>
+                </div>
+                 <!--Contato 3-->
+                     <div class="col-xs-12 col-md-4">
+                    <div class="form-group label-formulario">
+                        <label for="contact3">Contact 3</label>
+                        <input type="text" id="contact3" class="form-control" name="contact3" ng-model="partner.contact3">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-2">
+                    <div class="form-group label-formulario">
+                    <label for="type3">Type</label>
+                    <select class="form-control" id="type3" ng-model="partner.type3">
+                                        <option>Owner</option>
+                                        <option>Manager</option>
+                                        <option>Supervisor</option>                                    
+                                    </select>                
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    <div class="form-group label-formulario">
+                        <label for="phone1c3">Phone 1</label>
+                        <input type="text" id="phone1c3" class="form-control" name="phone1c3" ng-model="partner.phone1c3">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    <div class="form-group label-formulario">
+                        <label for="phone2c3">Phone 2</label>
+                        <input type="text" id="phone2c3" class="form-control" name="phone2c3" ng-model="partner.phone2c3">
+                    </div>
+                </div>
+
+                    <!--Value comissão adm-->
+                 <div class="col-xs-12 col-md-3" ng-if="profile.isAdmin()">
+                    <div class="form-group label-formulario">
+                    <label for="type3">Commissioning</label>
+                    <select class="form-control" id="type3" ng-model="partner.commission">
+                                        <option>Percentagem</option>
+                                        <option>Fixed value</option>
+                    </select>                
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-3" ng-if="profile.isAdmin()">
+                    <div class="form-group label-formulario">
+                        <label for="phone2c3">Value</label>
+                        <input type="text" id="phone2c3" class="form-control" name="phone2c3" ng-model="partner.value">
+                    </div>
+                </div>
+
+                    <!--Value comissão partner-->
+                <div class="col-xs-12 col-md-3" ng-if="profile.isPartner()">
+                    <div class="form-group label-formulario">
+                    <label for="type3">Commissioning</label>
+                    <select class="form-control" id="type3" ng-model="partner.commission" disabled>
+                                        <option>Percentagem</option>
+                                        <option>Fixed value</option>
+                    </select>                
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-3">
+                    <div class="form-group label-formulario" ng-if="profile.isPartner()">
+                        <label for="phone2c3">Value</label>
+                        <input type="text" id="phone2c3" class="form-control" name="phone2c3" ng-model="partner.value" disabled>
+                    </div>
+                </div>
+                                                                          
+
+
+                <div class="col-xs-12 col-md-12">
+                    <label for="Note">Note</label>
+                    <textarea class="form-control label-formulario" rows="3" maxlength="381" placeholder="Note" name="Note" ng-model="partner.note">       
+                </textarea>
+                </div>
+
+      
+                <!--Botões do fomulario de cadastro-->
+                <div class="col-xs-12 col-md-12 btn-crud">
+                        <button ng-disabled="formulario.$invalid" type="submit" class="btn btn-primary">Save</button>
+                        <a href="#/partners" class="btn btn-default" ng-if="profile.isAdmin()">Back</a>
+                        <!--<button  ng-click="remover(partner)"type="button" class="btn btn-danger">Delete</button>-->
+                </div>
+
+
+            </div>
+
+
+
+        </form>
+
+
+    </div>
+    <!--/.box-body -->
+</div>

@@ -1,0 +1,68 @@
+<div class="box ng-scope" ng-if="profile.isAdmin()">
+    <div class="box-header">
+        <h3 class="box-title">Lista de produtos</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+
+        <div class="row">
+        <div class="col-md-1 hidden-xs">
+            <!--<a class="btn btn-primary btn-sm"><i class="fa fa-fw fa-external-link"></i>Exportar itens</a>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exportar" data-whatever="@fat"><i class="fa fa-fw fa-external-link"></i>Exportar Itens</button>-->
+        </div>
+        <div class="col-md-8 text-center">
+            <div class="form-group has-feedback pull-left">
+                <input class="form-control input-lg filtro-lista" id="pesquisa" placeholder="Filter" type="search" ng-model="filtro">
+                <span class="glyphicon glyphicon-filter fa-fw form-control-feedback"></span>
+                <!--fa fa-search-->
+                <!--fa fa-2x fa-filter fa-fw-->
+                <!--glyphicon glyphicon-filter-->
+            </div>
+        </div>
+        <div class="col-md-3">
+            <!--<button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i>New</button>-->
+            <!--<a class="btn btn-primary" href="#/partner/{{_partnerID}}" role="button"><i class="glyphicon glyphicon-plus"></i> NEW PARTNER</a>-->
+                
+
+        </div>
+    </div>
+
+        <!--Veiculo lista-->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                               
+                                <th class="titulo-tabela">Nome</th>
+                                <th class="titulo-tabela">Tipo</th>
+                                <th class="titulo-tabela">Categoria</th>
+                                <th class="titulo-tabela">Validade</th>
+                                <th class="titulo-tabela">Qtde</th>
+                                <th class="titulo-tabela">DELETE</th>
+                            </tr>
+                            <tr ng-repeat="partner in partners | filter: filtro">
+
+                                <td>
+                                    <a ng-href="#/partner/{{partner._id}}"><i class="fa fa-edit"></i> {{partner.dba | uppercase}}</a>
+
+                                </td>
+                                <td>{{partner.contact | uppercase}}</td>
+                                <td>{{partner.phone1 | uppercase}}</td>
+                                <td>{{partner.login | uppercase}}</td>
+                                <td><a ng-href="#/offers/{{partner._id}}"><i class="fa fa-ticket"></i> Offers</a></td>
+                                <td class="text-center">
+                                    <!--<span  class="-plus et-down fa fa-lg fa-trash text-muted" ng-click="remove(partner)"></span>-->
+                                    <button ng-click="remover(partner)" class="btn btn-warning botao-excluir"><i class="-plus et-down fa fa-lg fa-trash text-muted"></i></buttom>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

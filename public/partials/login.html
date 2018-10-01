@@ -1,0 +1,34 @@
+<div class="container-fluid login">
+
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+
+            <h1 class="text‐center">{{logout}}</h1>
+
+            <div class="account-wall">
+                <img class="profile-img" src="img/logo-rs.svg" alt="">
+
+                <form class="form-signin" ng-submit="autenticar()">
+
+                    <input type="text" class="form-control" placeholder="Email" required="" autofocus="" ng-model="usuario.username">
+                    <input type="password" class="form-control" placeholder="Password" required="" ng-model="usuario.password">
+                    <!--<button class="btn btn-lg btn-primary btn-block" value="Entrar" type="submit">Entrar</button>-->
+                    <!--<a class="btn btn btn-lg btn-primary btn-block" href="#/dashboard" role="button">Enter</a>-->
+                    <button class="btn btn-lg btn-primary btn-block" value="Entrar" type="submit">Sign in</button>
+
+                   <!-- <label class="checkbox pull-left">
+                        <input type="checkbox" value="remember-me">
+                        Lembrar meus dados
+                    </label>-->
+                    <a href="#" class="pull-right need-help">Forgot password? </a><span class="clearfix"></span>
+                </form>
+            <div class="alert alert-danger text-center" ng-show="mensagem.length > 0">
+                <strong>{{mensagem}}</strong> 
+            </div>
+            </div>
+            <!--<a href="#" class="text-center new-account">Recuperar senha e usuario </a>-->
+        </div>
+    </div>
+
+
+</div>

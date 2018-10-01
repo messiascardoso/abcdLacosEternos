@@ -1,0 +1,66 @@
+<div class="box ng-scope" ng-if="profile.isAdmin()">
+    <div class="box-header">
+        <h3 class="box-title">List of Users</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+
+        <div class="row">
+        <div class="col-md-1 hidden-xs">
+            <!--<a class="btn btn-primary btn-sm"><i class="fa fa-fw fa-external-link"></i>Exportar itens</a>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exportar" data-whatever="@fat"><i class="fa fa-fw fa-external-link"></i>Exportar Itens</button>-->
+        </div>
+        <div class="col-md-8 text-center">
+            <div class="form-group has-feedback pull-left">
+                <input class="form-control input-lg filtro-lista" id="pesquisa" placeholder="Filter" type="search" ng-model="filtro">
+                <span class="glyphicon glyphicon-filter fa-fw form-control-feedback"></span>
+                <!--fa fa-search-->
+                <!--fa fa-2x fa-filter fa-fw-->
+                <!--glyphicon glyphicon-filter-->
+            </div>
+        </div>
+        <div class="col-md-3">
+            <!--<button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i>New</button>-->
+            <a class="btn btn-primary" href="#/user" role="button"><i class="glyphicon glyphicon-plus"></i> NEW USER</a>
+            <!--<a class="btn btn-primary" href="#/user/{{_userID}}" role="button"><i class="glyphicon glyphicon-plus"></i> NEW USER</a>-->
+            
+        </div>
+    </div>
+
+        <!--Veiculo lista-->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                               
+                                <th class="titulo-tabela">USER EDIT/NAME</th>                                
+                                <th class="titulo-tabela">USER NAME</th>
+                                <th class="titulo-tabela hidden-xs">PROFILE</th>
+                                <th class="titulo-tabela">CREATED</th>
+                                <th class="titulo-tabela hidden-xs">DELETE</th>
+                            </tr>
+                            <tr ng-repeat="user in users | filter: filtro">
+
+                                <td>
+                                    <a ng-href="#/user/{{user._id}}"><i class="fa fa-edit"></i> {{user.name | uppercase}}</a>
+
+                                </td>
+                                <td class="hidden-xs">{{user.email }}</td>
+                                <td class="hidden-xs">{{user.profile[0] | uppercase}}</td>
+                                <td>{{user.inclusao | date:'yyyy-MM-dd'}}</td>
+                                <td class="text-center hidden-xs">
+                                    <!--<span  class="-plus et-down fa fa-lg fa-trash text-muted" ng-click="remove(partner)"></span>-->
+                                    <button ng-click="DelUser(user)" class="btn btn-warning botao-excluir"><i class="-plus et-down fa fa-lg fa-trash text-muted"></i></buttom>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

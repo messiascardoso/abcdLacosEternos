@@ -1,0 +1,86 @@
+<div class="box box-info">
+    <div class="box-header with-border">
+        <h3 class="box-title">Register User</h3>
+        <!--<h2>{{mensagem}}</h2>
+        <h2>formulario.$valid={{formulario.$valid}}</h2>
+        <h2>formulario.$setPristine={{formulario.$pristine}}</h2>-->
+        <h2 class="text-center {{status}}">{{mensagem}}</h2>
+
+    </div>
+
+    <div class="box-body">
+        <form name="formulario" novalidate ng-submit="submeter()" class="ng-invalid ng-invalid-required ng-valid-maxlength ng-dirty ng-valid-parse ng-invalid-email ng-invalid-pattern ng-invalid-minlength label-custon-togo">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group label-formulario">
+                        <label for="name">Name</label> <span>*</span>
+                        <input type="text" class="form-control" name="name" ng-model="user.name" required>
+                        <span class="form‐control alert‐danger" ng-show="formulario.$submitted && formulario.nome.$error.required">
+                                 Name required!
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group label-formulario">
+
+                        <label for="email">E-mail/UserName</label>
+                        <input type="text" id="taxid" class="form-control" name="email" ng-model="user.email">
+
+                    </div>
+                </div>
+               
+                 <div class="col-md-3" ng-if="profile.isAdmin()">
+                    <div class="form-group label-formulario">
+
+                        <label for="profile">Profile</label><span>*</span>
+                            <select class="form-control" id="profile" ng-model="user.profile">
+                                                <option>ADMIN</option>
+                                                <option>PARTNER</option>                                    
+                            </select>
+                        <span class="form‐control alert‐danger" ng-show="formulario.$submitted && formulario.status.$error.required">
+                            Name required!
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <div class="input-group-btn" ng-init="marcado = false">                            
+                            <button ng-click="marcado = true" type="button" class="btn btn-secondary dropdown-toggle" style="margin-top: 25px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Change Password
+                            </button> 
+                        </div>
+                        <label for="profile">&nbsp</label>
+                        <input ng-if="marcado" type="password" class="form-control" ng-model="user.password" placeholder="Type new password">
+                        <span class="form‐control alert‐danger" ng-show="formulario.$submitted && formulario.status.$error.required">
+                            Password required!
+                        </span>
+                    </div>                        
+                </div>              
+
+                
+                <div class="col-xs-12 col-md-12">
+                    <label for="note">Note</label>
+                    <textarea class="form-control label-formulario" rows="3" maxlength="381" placeholder="Note" name="Note" ng-model="user.note">       
+                </textarea>
+                </div>
+
+
+                <!--Botões do fomulario de cadastro-->
+                <div class="col-xs-12 col-md-12 btn-crud">
+                        <button ng-disabled="formulario.$invalid" type="submit" class="btn btn-primary">Save</button>
+                        <a href="#/users" class="btn btn-default" ng-if="profile.isAdmin()">Back</a>
+                        <button  ng-click="remover(user)"type="button" class="btn btn-danger" ng-if="profile.isAdmin()">Delete</button>
+                </div>
+
+
+            </div>
+
+
+
+        </form>
+
+
+    </div>
+    <!--/.box-body -->
+</div>

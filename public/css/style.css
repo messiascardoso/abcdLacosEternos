@@ -1,0 +1,238 @@
+/*Oi Reza*/
+
+/*.veiculos-table [ng-click] {
+  cursor: pointer;
+}*/
+/*Classes gerais*/
+/*Lista de vouchers tabela*/
+.vouchers-table-format {
+    min-height: 85%!important;
+    max-height: 740px!important;
+    overflow-y: scroll!important;
+}
+
+.form-btn{
+   margin-top: 20px;
+   
+}
+
+.btn-crud{
+    padding-top: 20px;
+} 
+
+
+.profile-block.text-right{
+    z-index: 9999;
+}
+
+/*Login*/
+.account-wall {
+    margin: 0 auto; 
+    padding: 40px 0px 20px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    max-width: 360px;
+    margin-top: 40px;
+    
+}
+
+.profile-img {
+    width: 186px;
+    height: 91px;
+    margin: 0 auto 10px;
+    display: block;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-signin .checkbox {
+    font-weight: normal;
+}
+
+.form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    
+}
+.need-help {
+    margin-top: 10px;
+}
+
+.new-account {
+    display: block;
+    margin-top: 10px;
+}
+
+.login{
+   background-color: #EEEEEE;
+   height: 900px;
+}
+
+/*./Fim Login*/
+
+.content-wrapper{
+    padding: 35px;
+}
+
+/*Admin logo*/
+.skin-blue .main-header.logo:hover {
+    background-color: #CB3E3E!important;
+}
+.skin-blue .main-header .logo {
+    background-color: #CB3E3E!important;
+    color: #fff;
+    border-bottom: 0 solid transparent;
+}
+/*Header top*/
+.skin-blue .main-header .navbar {
+    background-color: #005582!important;
+}
+/*Menu lateral esquerdo*/
+.main-sidebar, .skin-blue .left-side {
+    background-color: #005582!important;
+}
+
+.skin-blue .sidebar-menu > li.header {
+    color: #ffffff!important;
+    background: #1d313c!important;
+}
+
+.skin-blue .sidebar-menu > li:hover > a, .skin-blue .sidebar-menu > li.active > a {
+    color: #fff;
+    background: #CB3E3E!important;
+    border-left-color: #005582!important;
+}
+
+.skin-blue .sidebar-form input[type="text"], .skin-blue .sidebar-form .btn {
+    box-shadow: none;
+    background-color: #fff;
+    border: 1px solid transparent;
+    height: 35px;
+}
+
+
+/*Usuario Atual*/
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 15px 29px!important;
+}
+.navbar-nav > .user-menu > .dropdown-menu {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    padding: 1px 0 0 0;
+    border-top-width: 0;
+    width: 0px;
+}
+
+
+
+/*Formulario*/
+
+.box.box-info {
+    border-top-color: #337AB7!important;
+}
+.label-custon-togo label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: normal!important; 
+    color: #337AB7!important;
+}
+.label-custon-togo p{
+    font-weight: bold;
+    color:#337AB7;
+    padding-left: 30px
+}
+
+.form-borda h3{
+    border-bottom-color: #337AB7!important;
+    position: relative;
+    /*border-radius: 3px;*/
+    background: #ffffff;
+    border-bottom: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    /*box-shadow: 0 1px 1px rgba(0,0,0,0.1);*/
+    color: #444;
+    font-size: 18px;
+}
+#crudcuston {
+    cursor: pointer; 
+    font-size: 20px; 
+    color:brown;
+}
+
+
+/*Filtro*/
+.filtro-lista {
+    height: 35px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
+/*Listas*/
+.botao-excluir {
+    background-color: #fff;
+    border-color: #fff;
+}
+.botao-excluir:hover {
+    background-color: #fff;
+    border-color: #fff;
+}
+
+/*Tab offer*/
+
+.offer-tab .tab-pane {
+    padding: 20px 8px;
+}
+
+.voucher-validate{
+    height: 100px;
+}
+
+
+
+
+
+
+ /*Alterar a cor de fundo se o documento é maior  
+ do que 768 pixels de largura*/
+ /*@media (min-width: 768px){
+body {
+        background-color:red;
+    }
+
+ }*/
+
+ /*Alterar a cor de fundo se o documento é menor 
+ do que 768 pixels de largura: imple-image-gallery*/
+ /*@media screen and (max-width: 768px) {
+   body {
+        background-color:red;
+    }
+}*/
