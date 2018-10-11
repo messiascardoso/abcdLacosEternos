@@ -57,7 +57,7 @@ module.exports = function () {
   app.use(cookieParser());
   /* O segundo middleware session cria por padrão a sessão do usuário em
    memória. Ele recebe três parâmetros: */
-  app.use(session({ secret: '#Macaco@India2016', resave: true, saveUninitialized: true }));
+  app.use(session({ secret: '#Mar&India2066', resave: true, saveUninitialized: true }));
 
 
 

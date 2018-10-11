@@ -1,11 +1,8 @@
 var mongoose = require('mongoose');
 var findOrCreate = require('mongoose-findorcreate');
 var bcrypt = require('bcrypt-nodejs');
-
-
  
 // console.log(bcrypt.hashSync("adm#teste", bcrypt.genSaltSync(5), null));
-
 
 module.exports = function () {
 
@@ -31,15 +28,7 @@ module.exports = function () {
     schema.methods.validPassword = function (password) {
         return bcrypt.compareSync(password, this.password);
     }
-
- 
-
-
-
-
-
     // schema.plugin(findOrCreate);
-
     return mongoose.model('User', schema);
 };
 
