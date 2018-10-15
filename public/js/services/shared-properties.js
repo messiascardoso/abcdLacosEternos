@@ -1,4 +1,4 @@
-angular.module('americanExperian').service('sharedProperties',function(){
+angular.module('abcdlacosEternos').service('sharedProperties',function(){
     var property = {};    
 
     return{

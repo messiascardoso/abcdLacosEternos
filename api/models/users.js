@@ -15,9 +15,6 @@ module.exports = function () {
         email2: {type: String},
         inclusao: {type: Date,default: Date.now},
         profile:[{type:String}],  //ADM, PARTNER
-        partner_id:{type: mongoose.Schema.Types.ObjectId, 
-           ref: 'Parceiro'
-        },
         status: {type: Boolean},
     });
 

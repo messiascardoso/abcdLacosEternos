@@ -1,4 +1,4 @@
-angular.module('americanExperian').controller('DashboardController',
+angular.module('abcdlacosEternos').controller('DashboardController',
     function ($scope, $http, $stateParams, $location, UserService, ModalAlertService, Profile, DashboardService) {  //$routeParams
 
         $scope.user = {};

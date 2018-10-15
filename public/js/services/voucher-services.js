@@ -1,4 +1,4 @@
-angular.module('americanExperian').factory('VoucherService', function ($http, Upload, config, $stateParams) {
+angular.module('abcdlacosEternos').factory('VoucherService', function ($http, Upload, config, $stateParams) {
  
 
     //Valida Voucher

@@ -1,4 +1,4 @@
-angular.module('americanExperian')
+angular.module('abcdlacosEternos')
     .factory('Profile',function () {
 
     var roles = [];

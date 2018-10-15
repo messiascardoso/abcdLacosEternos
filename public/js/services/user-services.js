@@ -1,4 +1,4 @@
-angular.module('americanExperian').service('UserService', function ($http) {
+angular.module('abcdlacosEternos').service('UserService', function ($http) {
     
 
 

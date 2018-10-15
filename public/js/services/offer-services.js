@@ -1,4 +1,4 @@
-angular.module('americanExperian').factory('offerService', function ($http, Upload, config, $stateParams) {
+angular.module('abcdlacosEternos').factory('offerService', function ($http, Upload, config, $stateParams) {
 
   
    //Lista com Geolocation  

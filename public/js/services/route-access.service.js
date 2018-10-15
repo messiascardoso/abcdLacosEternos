@@ -1,4 +1,4 @@
-angular.module('americanExperian')
+angular.module('abcdlacosEternos')
     .service('RouteAccessService',function () {
 
          this.checkRoles = function(access) {

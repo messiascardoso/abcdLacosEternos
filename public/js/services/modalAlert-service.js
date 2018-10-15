@@ -1,4 +1,4 @@
-angular.module('americanExperian').factory('ModalAlertService', function($uibModal) {
+angular.module('abcdlacosEternos').factory('ModalAlertService', function($uibModal) {
     
     var modal ='';
     var success = 'Success...';

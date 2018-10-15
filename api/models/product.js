@@ -15,7 +15,8 @@ module.exports = function () {
         percentagem: Number,
         size: String,
         genero:String,
-        amount: Number
+        amount: Number,
+        note: String
     });
 
     mongoose.set("debug", true);

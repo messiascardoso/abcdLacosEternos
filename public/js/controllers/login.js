@@ -1,4 +1,4 @@
-angular.module("americanExperian")
+angular.module("abcdlacosEternos")
 .controller('LoginController',function ($rootScope,$scope, $http, $location,$state, $window, Profile) {
     
   $scope.usuario = {};

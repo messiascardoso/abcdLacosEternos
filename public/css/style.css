@@ -1,10 +1,11 @@
-/*Oi Reza*/
 
-/*.veiculos-table [ng-click] {
-  cursor: pointer;
-}*/
-/*Classes gerais*/
-/*Lista de vouchers tabela*/
+
+
+
+.error{
+    border: solid 1px red;
+}
+
 .vouchers-table-format {
     min-height: 85%!important;
     max-height: 740px!important;
@@ -148,9 +149,11 @@
     width: 0px;
 }
 
-
-
 /*Formulario*/
+
+.box-body{
+  min-height:45rem;
+}
 
 .box.box-info {
     border-top-color: #337AB7!important;

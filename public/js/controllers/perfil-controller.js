@@ -1,4 +1,4 @@
-angular.module('americanExperian').controller('PerfilController',
+angular.module('abcdlacosEternos').controller('PerfilController',
     function ($scope,$http, $stateParams, $location, Profile) {  //$routeParams
 
     //Get profile gravado no SessionStorage
