@@ -239,3 +239,29 @@ body {
         background-color:red;
     }
 }*/
+
+
+
+
+/* css suplementar para tela de vendas */
+.corFundo{
+    background-color: #CB3E3E!important;
+    color: white;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    clear: both;
+    height: 0;
+}
+
+.botao{
+    font-size: 2em;
+    float: right;
+    margin: 5px;
+}
+
+.botoes{
+    border-top: 1px solid gray;
+}

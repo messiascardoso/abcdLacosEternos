@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vendas</title>
+       
+        <link href="style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-wdth, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container-fluid clearfix" style="width: 100%">
+            <div class="container-fluid corFundo clearfix">
+                <h1>Vendas</h1>
+            </div>
+
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="input-group">
+                            <label>Código</label>
+                                <input type="number" class="form-control" aria-describedby="basic-addon1" name="codigoProd">
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="input-group">
+                            <label>Quantidade</label>
+                            <input type="number" class="form-control" aria-describedby="basic-addon1" name="quantProd">
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="input-group" style="width: 100%">
+                            <label>Produto</label>
+                            <input type="text" class="form-control" aria-describedby="basic-addon1" name="nomeProd">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group">
+                            <label>Em estoque</label>
+                            <input type="text" class="form-control" aria-describedby="basic-addon1" name="quantEstoque">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                            <label>Valor Unitário</label>   
+                        <div class="input-group">
+                            
+                            <span class="input-group-addon">R$</span>
+                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="valor">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr style="border: 1px solid">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2" style="border: 1px solid">
+                        <div class="container-fluid">
+                            <img src="partials/photo.svg" class="img-responsive" alt="Responsive image">
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Código</th>
+                                        <th>Descrição</th>
+                                        <th>Quantidade</th>
+                                        <th>Preço Unitário</th>
+                                    </tr>
+
+                                </thead>
+                                
+                            </table>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2">
+                            <label>Tipo Pagamento</label>
+                            <select class="form-control" name="tipoPagamento">
+                                    <option value="">   </option>
+                                    <option value="cartaoCred">Cartão crédito</option>
+                                    <option value="cartaoDeb">Cartão Débito</option>
+                                    <option value="dinheiro">Dinheiro</option>
+                            </select>            
+
+                            <label>Valor Recebido</label>   
+                            <div class="input-group">
+                                
+                                <span class="input-group-addon">R$</span>
+                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="valorRecebido">
+                            </div>
+
+                            <label>Sub Total</label>   
+                            <div class="input-group">
+                                
+                                <span class="input-group-addon">R$</span>
+                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="valorRecebido">
+                            </div>
+
+                            <label>Total a Pagar</label>   
+                            <div class="input-group input-group-lg">
+                                    <span class="input-group-addon" id="sizing-addon1">R$</span>
+                                    <input type="text" class="form-control" aria-describedby="sizing-addon1" name="totalPagar">
+                                  </div>
+
+                            <label>Troco</label>   
+                            <div class="input-group input-group-lg">
+                                    <span class="input-group-addon" id="sizing-addon1">R$</span>
+                                    <input type="text" class="form-control" aria-describedby="sizing-addon1" name="troco">
+                                  </div>
+
+
+                    </div>
+
+                    <div class="col-md-10">
+                        <div class="botoes">
+                                <button type="button" class="btn btn-success botao glyphicon glyphicon-ok-sign">Confirmar</button>
+                                <button type="button" class="btn btn-warning botao glyphicon glyphicon-remove">Cancelar</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
