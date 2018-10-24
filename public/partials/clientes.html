@@ -1,0 +1,55 @@
+<!-- ng-if="profile.isAdmin()" -->
+<div class="box ng-scope">
+    <div class="box-header">
+        <h3 class="box-title">Lista de clientes</h3>
+    </div>
+    <div class="box-body">
+			<div class="row">
+			<div class="col-md-8 text-center">
+				<div class="form-group has-feedback pull-left">
+					<input class="form-control input-lg filtro-lista" id="pesquisa" placeholder="Filter" type="search" ng-model="filtro">
+					<span class="glyphicon glyphicon-filter fa-fw form-control-feedback"></span>
+				</div>
+			</div>
+			<div class="col-md-3">
+					<a class="btn btn-primary" href="#/cliente" role="button"><i class="glyphicon glyphicon-plus"></i> Novo Cliente</a>
+			</div>
+    </div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="table-responsive">
+						<table class="table table-hover">
+							<tbody>
+								<tr>
+									<th class="titulo-tabela">Nome</th>
+									<th class="titulo-tabela">Endereço</th>
+									<th class="titulo-tabela">Número</th>
+									<th class="titulo-tabela">Bairro</th>
+									<th class="titulo-tabela">Município</th>
+									<th class="titulo-tabela">Estado</th>
+									<th class="titulo-tabela">Telefone</th>
+									<th class="titulo-tabela">E-mail</th>
+									<th class="titulo-tabela">DELETE</th>
+								</tr>
+								<tr ng-repeat="produto in produtos | filter: filtro">
+									<td>
+											<a ng-href="#/clientes/{{clientes._id}}"><i class="fa fa-edit"></i> {{clientes.name | uppercase}}</a>
+									</td>
+									
+									<!--
+									<td>{{produto.category | uppercase}}</td>
+									<td>{{produto.size | uppercase}}</td>
+									<td>{{produto.genero | uppercase}}</td>
+									<td>{{produto.price | uppercase}}</td>
+									-->
+									<td class="text-center">
+											<button ng-click="deletar(produto)" class="btn btn-warning botao-excluir"><i class="-plus et-down fa fa-lg fa-trash text-muted"></i></button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+    </div>
+</div>

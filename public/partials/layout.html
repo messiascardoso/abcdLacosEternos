@@ -85,7 +85,7 @@
           </a>        
         </li>-->
         <!--DashBoard-->
-        <li class=" active treeview">
+        <li class="  active treeview">
           <a href="#/dashboard">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>           
             <span class="pull-right-container">
@@ -112,6 +112,46 @@
           </ul>
         </li>
 
+        <li class="treeview" ng-if="profile.isAdmin()">
+            <a href="#/clientes">
+              <i class="glyphicon glyphicon-user"></i> <span>Clientes</span>           
+              <span class="pull-right-container">
+                <!--<i class="fa fa-angle-left pull-right"></i>-->
+              </span>
+            </a>
+            <ul class="treeview-menu">            
+              <!--<li ng-if="profile.isAdmin()"><a href="#/partners"><i class="fa fa-circle-o"></i> List of Partners</a></li>
+              <li ng-if="profile.isPartner()"><a href="#/partner/{{_partnerID}}"><i class="fa fa-circle-o"></i> Partners</a></li>                  -->
+            </ul>
+          </li>
+
+          <li class="treeview" ng-if="profile.isAdmin()">
+              <a href="#/alimentos">
+                <i class="glyphicon glyphicon-apple"></i> <span>Alimentos</span>           
+                <span class="pull-right-container">
+                  <!--<i class="fa fa-angle-left pull-right"></i>-->
+                </span>
+              </a>
+              <ul class="treeview-menu">            
+                <!--<li ng-if="profile.isAdmin()"><a href="#/partners"><i class="fa fa-circle-o"></i> List of Partners</a></li>
+                <li ng-if="profile.isPartner()"><a href="#/partner/{{_partnerID}}"><i class="fa fa-circle-o"></i> Partners</a></li>                  -->
+              </ul>
+            </li>
+
+        <li class="treeview" ng-if="profile.isAdmin()">
+          <a href="#/caixa">
+            <i class="glyphicon glyphicon-shopping-cart"></i> <span>caixa</span>           
+            <span class="pull-right-container">
+              <!--<i class="fa fa-angle-left pull-right"></i>-->
+            </span>
+          </a>
+          <ul class="treeview-menu">            
+            <!--<li ng-if="profile.isAdmin()"><a href="#/partners"><i class="fa fa-circle-o"></i> List of Partners</a></li>
+            <li ng-if="profile.isPartner()"><a href="#/partner/{{_partnerID}}"><i class="fa fa-circle-o"></i> Partners</a></li>                  -->
+          </ul>
+        </li>
+
+
         <!--Parceiros -  lista de ofertas-->
          <li class="treeview" ng-if="profile.isPartner()">
           <a href="#/offers/{{UserProfile.partner_id}}">
@@ -137,7 +177,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#/vouchersgenerated"><i class="fa fa-circle-o"></i>Caixa</a></li>
+            <li><a href="#/caixa"><i class="fa fa-circle-o"></i>Caixa</a></li>
             <li><a href="#/vouchersvalidate"><i class="fa fa-circle-o"></i>Estoque</a></li>
             
           </ul>

@@ -52,7 +52,45 @@ angular.module('abcdlacosEternos', ['ngResource', 'ui.router', 'ui.mask', 'ngFil
                     //     }
                     // }
                 })
-            
+
+                .state('dash.caixa', {
+                    url: '/caixa',
+                    templateUrl: 'partials/caixa.html',
+                    // controller: 'ProdutosController',
+                    
+                })
+
+
+                .state('dash.cliente', {
+                    url: '/cliente',
+                    templateUrl: 'partials/cliente.html',
+                    // controller: 'ProdutosController',
+                    
+                })
+                .state('dash.clientes', {
+                    url: '/clientes',
+                    templateUrl: 'partials/clientes.html',
+                    // controller: 'ProdutosController',
+                    
+                })
+
+
+                .state('dash.alimentos', {
+                    url: '/alimentos',
+                    templateUrl: 'partials/alimentos.html',
+                    // controller: 'ProdutosController',
+                    
+                })
+
+
+                .state('dash.alimento', {
+                    url: '/alimento',
+                    templateUrl: 'partials/alimento.html',
+                    // controller: 'ProdutosController',
+                    
+                })
+
+
                 // Administrative Routes
                 .state('user', {
                     url: '/user',

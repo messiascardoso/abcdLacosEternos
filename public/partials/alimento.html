@@ -1,0 +1,136 @@
+
+<div class="box box-info">
+    <div class="box-header with-border">
+				<h3 class="box-title">Cadastrar Alimento</h3>
+				<p>{{ formulario.$invalid }}</p>
+    </div>
+    <div class="box-body">
+			<form name="formulario" novalidate ng-submit="submeter(formulario)" class="">
+				<div class="row">
+
+					<div class="col-xs-12 col-md-6">
+						<div class="form-group label-formulario">
+							<label for="name">Descrição</label> <span>*</span>
+							<input 
+								type="text" 
+								class="form-control" 
+								ng-class="{ error: formulario.name.$invalid &&  ( formulario.$submitted || formulario.name.$touched ) }"
+								name="descricao"
+								ng-model="produto.name" 
+								required>
+							<span class="form‐control text-red" ng-show="formulario.name.$invalid &&  ( formulario.$submitted || formulario.name.$touched )">
+									Campo Obrigatório
+							</span>
+						</div>
+					</div>
+					
+					
+					<div class="col-xs-12 col-md-3">
+						<div class="form-group label-formulario">
+							<label for="status">Quantidade</label> <span>*</span>
+							<input 
+								type="number" 
+								id="quantidade"
+								class="form-control" 
+								name="quantidade"
+								ng-model="produto.status"
+								ng-class="{ error: formulario.status.$invalid &&  ( formulario.$submitted || formulario.status.$touched ) }" 
+								required>
+							<span class="form‐control text-red" ng-show="formulario.status.$invalid &&  ( formulario.$submitted || formulario.status.$touched )">
+								Campo Obrigatório 
+							</span>
+						</div>
+					</div>
+
+
+					<div class="col-xs-12 col-md-3">
+						<div class="form-group label-formulario">
+							<label for="price">vencimento</label> <span>*</span>
+							<input 
+								type="date" 
+								id="vencimento" 
+								class="form-control" 
+								name="vencimento"
+								ng-model="produto.price"
+								ng-class="{ error: formulario.price.$invalid &&  ( formulario.$submitted || formulario.price.$touched ) }" 
+								required>
+							<span class="form‐control text-red" ng-show="formulario.price.$invalid &&  ( formulario.$submitted || formulario.price.$touched )">
+								Campo Obrigatório 
+							</span>
+						</div>
+					</div>
+				</div>
+
+
+				
+					<div class="col-xs-12 col-md-3">
+						<div class="form-group label-formulario">
+							<label for="percentagem">Data Entrada</label> <span>*</span>
+							<input 
+								type="date" 
+								id="data_entrada" 
+								class="form-control" 
+								name="data_entrada" 
+								ng-model="produto.percentagem"
+								ng-class="{ error: formulario.percentagem.$invalid &&  ( formulario.$submitted || formulario.percentagem.$touched ) }" 
+								required>
+							<span class="form‐control text-red" ng-show="formulario.percentagem.$invalid &&  ( formulario.$submitted || formulario.percentagem.$touched )">
+									Campo Obrigatório 
+							</span>
+						</div>
+					</div>
+
+
+					<div class="col-xs-12 col-md-3">
+						<div class="form-group label-formulario">
+							<label for="percentagem">Data Saída</label> <span>*</span>
+							<input 
+								type="date" 
+								id="data_saida" 
+								class="form-control" 
+								name="data_saida" 
+								ng-model="produto.percentagem"
+								ng-class="{ error: formulario.percentagem.$invalid &&  ( formulario.$submitted || formulario.percentagem.$touched ) }" 
+								required>
+							<span class="form‐control text-red" ng-show="formulario.percentagem.$invalid &&  ( formulario.$submitted || formulario.percentagem.$touched )">
+									Campo Obrigatório 
+							</span>
+						</div>
+					</div>
+					
+					
+					<div class="col-xs-12 col-md-6">
+						<div class="form-group label-formulario">
+							<label for="percentagem">Tipo Saída</label> <span>*</span>
+							<input 
+								type="text" 
+								id="percentagem" 
+								class="form-control" 
+								name="tipo_saida" 
+								ng-model="produto.percentagem"
+								ng-class="{ error: formulario.percentagem.$invalid &&  ( formulario.$submitted || formulario.percentagem.$touched ) }" 
+								required>
+							<span class="form‐control text-red" ng-show="formulario.percentagem.$invalid &&  ( formulario.$submitted || formulario.percentagem.$touched )">
+									Campo Obrigatório 
+							</span>
+						</div>
+					</div>
+				
+
+				
+					<div class="col-xs-12 col-md-12">
+						<label for="note">Nota</label>
+						<textarea class="form-control label-formulario" rows="3" maxlength="381" placeholder="Notas" name="note" ng-model="produto.note">       
+						</textarea>
+					</div>
+					<div class="col-xs-12 col-md-12 btn-crud">
+							<!-- ng-disabled="formulario.$invalid" -->
+						<button  type="submit" class="btn btn-primary">Salvar</button>
+						<a href="#/alimentos" class="btn btn-default">Voltar</a>
+						<!--<button  ng-click="remover(produto)"type="button" class="btn btn-danger">Delete</button>-->
+					</div>
+				
+      </div>
+    </form>
+    </div>
+</div>
