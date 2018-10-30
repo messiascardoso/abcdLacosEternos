@@ -59,39 +59,36 @@ angular.module('abcdlacosEternos', ['ngResource', 'ui.router', 'ui.mask', 'ngFil
                     // controller: 'ProdutosController',
                     
                 })
-
-
-                .state('dash.cliente', {
-                    url: '/cliente',
-                    templateUrl: 'partials/cliente.html',
-                    // controller: 'ProdutosController',
-                    
-                })
                 .state('dash.clientes', {
                     url: '/clientes',
                     templateUrl: 'partials/clientes.html',
-                    // controller: 'ProdutosController',
+                    controller: 'ClientesController',
+                    
+								})
+								.state('dash.cliente', {
+									url: '/cliente',
+									templateUrl: 'partials/cliente.html',
+									controller: 'ClienteController',
+									
+								})
+                .state('dash.cliente/:clienteId', {
+                    url: '/cliente/:clienteId',
+                    templateUrl: 'partials/cliente.html',
+                    controller: 'ClienteController',
                     
                 })
-
-
                 .state('dash.alimentos', {
                     url: '/alimentos',
                     templateUrl: 'partials/alimentos.html',
                     // controller: 'ProdutosController',
                     
                 })
-
-
                 .state('dash.alimento', {
                     url: '/alimento',
                     templateUrl: 'partials/alimento.html',
                     // controller: 'ProdutosController',
                     
                 })
-
-
-                // Administrative Routes
                 .state('user', {
                     url: '/user',
                     parent: 'dash',
@@ -99,7 +96,6 @@ angular.module('abcdlacosEternos', ['ngResource', 'ui.router', 'ui.mask', 'ngFil
                     controller: 'UserController'
 
                 })
-
                 .state('user/:userId', {
                     url: '/user/:userId',
                     parent: 'dash',

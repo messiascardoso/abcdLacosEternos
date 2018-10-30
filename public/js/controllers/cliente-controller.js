@@ -1,5 +1,5 @@
 angular.module('abcdlacosEternos').controller('ClienteController',
-    function ($scope, $http, $stateParams, $location, ModalAlertService, Profile, ProdutoServices) {  //$routeParams
+    function ($scope, $http, $stateParams, $location, ModalAlertService, Profile, ClienteServices) {  //$routeParams
 
     $scope.cliente = {};
 		$scope.mensagem = '';
@@ -7,8 +7,8 @@ angular.module('abcdlacosEternos').controller('ClienteController',
 		$scope.profile = Profile;
 
 		//Get cliente ID
-		if ($stateParams.produtoId) {
-			ClienteServices.get($stateParams.produtoId)
+		if ($stateParams.clienteId) {
+			ClienteServices.get($stateParams.clienteId)
 				.success(function (cliente) {
 					$scope.cliente = cliente;
 				})
@@ -22,7 +22,7 @@ angular.module('abcdlacosEternos').controller('ClienteController',
 		$scope.submeter = function (formulario) {
 			if (formulario.$valid) {
 				if ($scope.cliente._id) {
-					ClienteServices.update($stateParams.produtoId, $scope.cliente )
+					ClienteServices.update($stateParams.clienteId, $scope.cliente )
 						.success(function () {
 							$scope.cliente = {};
 							formulario.$setPristine();

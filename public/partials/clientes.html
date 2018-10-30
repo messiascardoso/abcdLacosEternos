@@ -10,7 +10,7 @@
 					<input class="form-control input-lg filtro-lista" id="pesquisa" placeholder="Filter" type="search" ng-model="filtro">
 					<span class="glyphicon glyphicon-filter fa-fw form-control-feedback"></span>
 				</div>
-			</div>
+			</div>`
 			<div class="col-md-3">
 					<a class="btn btn-primary" href="#/cliente" role="button"><i class="glyphicon glyphicon-plus"></i> Novo Cliente</a>
 			</div>
@@ -31,19 +31,19 @@
 									<th class="titulo-tabela">E-mail</th>
 									<th class="titulo-tabela">DELETE</th>
 								</tr>
-								<tr ng-repeat="produto in produtos | filter: filtro">
-									<td>
-											<a ng-href="#/clientes/{{clientes._id}}"><i class="fa fa-edit"></i> {{clientes.name | uppercase}}</a>
+								<tr ng-repeat="cliente in clientes | filter: filtro">
+									<td class="text-capitalize">
+											<a ng-href="#/cliente/{{cliente._id}}"><i class="fa fa-edit"></i> {{cliente.name | uppercase}}</a>
 									</td>
-									
-									<!--
-									<td>{{produto.category | uppercase}}</td>
-									<td>{{produto.size | uppercase}}</td>
-									<td>{{produto.genero | uppercase}}</td>
-									<td>{{produto.price | uppercase}}</td>
-									-->
+									<td class="text-capitalize">{{cliente.endereco | uppercase}}</td>
+									<td class="text-capitalize">{{cliente.numero | uppercase}}</td>
+									<td class="text-capitalize">{{cliente.bairro | uppercase}}</td>
+									<td class="text-capitalize">{{cliente.municipio | uppercase}}</td>
+									<td class="text-capitalize">{{cliente.estado | uppercase}}</td>
+									<td class="text-capitalize">{{cliente.telefone | uppercase}}</td>
+
 									<td class="text-center">
-											<button ng-click="deletar(produto)" class="btn btn-warning botao-excluir"><i class="-plus et-down fa fa-lg fa-trash text-muted"></i></button>
+											<button ng-click="deletar(cliente)" class="btn btn-warning botao-excluir"><i class="-plus et-down fa fa-lg fa-trash text-muted"></i></button>
 									</td>
 								</tr>
 							</tbody>
