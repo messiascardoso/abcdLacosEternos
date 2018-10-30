@@ -11,7 +11,6 @@ module.exports = function () {
         estado: String,
         email: String,
         telefone: Number,
-        telefone: Number,
     });
 
     mongoose.set("debug", true);
