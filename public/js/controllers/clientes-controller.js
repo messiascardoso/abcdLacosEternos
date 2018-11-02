@@ -1,5 +1,5 @@
 angular.module('abcdlacosEternos').controller('ClientesController',
-    function ($scope, $stateParams, $location, Profile, ClienteServices) {  //$routeParams
+    function ($scope, $stateParams, $location, Profile, ClienteServices, SweetAlert) {  //$routeParams
 
         $scope.clientes = [];
         $scope.filtro = '';
@@ -26,22 +26,42 @@ angular.module('abcdlacosEternos').controller('ClientesController',
 						});
         }
 
-        //Disable produto
-        $scope.deletar = function (produto) {
-					var confirma = confirm("Deletar produto ?:  \n"+ "\n  "+ produto.name);
-					if (produto._id && confirma) {
-						ClienteServices.del(produto._id)
-							.success(function () {
-								var clientes = [];
-								clientes = $scope.clientes.filter(function (element) {
-										return produto._id != element._id;
-								});
-								$scope.clientes = clientes;
-							})		
-							.error(function (erro) {
-									ModalAlertService.messageError('lg');
-							});
-            }
+        //Disable cliente
+        $scope.deletar = function (cliente) {
+					swal({
+						title: "Certeza que deseja deletar?" ,
+						text: cliente.name,
+						icon: "warning",
+						buttons: true,
+						dangerMode: true,
+					})
+					.then( function (btnResult){
+						if (btnResult) {
+							if (cliente._id) {
+								ClienteServices.del(cliente._id)
+								.success(function () {
+									var clientes = [];
+									clientes = $scope.clientes.filter(function (element) {
+										return cliente._id != element._id;
+									 });
+									 $scope.clientes = clientes;
+									 swal("Cliente", "Deletado com sucesso!", "success");
+									 })		
+									 .error(function (erro) {
+											 ModalAlertService.messageError('lg');
+									 });
+							 }
+							// swal("Cliente deletado com sucesso!", {
+							// 	icon: "success",
+							// });
+						} 
+					});
+				
+				
+
+
+
+					// var confirma = confirm("Deletar produto ?:  \n"+ "\n  "+ produto.name);
         };
 
 

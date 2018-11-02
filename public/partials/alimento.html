@@ -2,135 +2,116 @@
 <div class="box box-info">
     <div class="box-header with-border">
 				<h3 class="box-title">Cadastrar Alimento</h3>
-				<p>{{ formulario.$invalid }}</p>
     </div>
     <div class="box-body">
-			<form name="formulario" novalidate ng-submit="submeter(formulario)" class="">
+			<form name="formulario"
+						autocomplete="off" 
+						novalidate ng-submit="submeter(formulario)" 
+						class="">
 				<div class="row">
-
 					<div class="col-xs-12 col-md-6">
 						<div class="form-group label-formulario">
-							<label for="name">Descrição</label> <span>*</span>
+							<label for="nome">Nome</label> <span>*</span>
 							<input 
 								type="text" 
 								class="form-control" 
-								ng-class="{ error: formulario.name.$invalid &&  ( formulario.$submitted || formulario.name.$touched ) }"
-								name="descricao"
-								ng-model="produto.name" 
+								ng-class="{ error: formulario.nome.$invalid &&  ( formulario.$submitted || formulario.nome.$touched ) }"
+								nome="nome"
+								ng-model="alimento.nome" 
 								required>
-							<span class="form‐control text-red" ng-show="formulario.name.$invalid &&  ( formulario.$submitted || formulario.name.$touched )">
+							<span class="form‐control text-red" ng-show="formulario.nome.$invalid &&  ( formulario.$submitted || formulario.nome.$touched )">
 									Campo Obrigatório
 							</span>
 						</div>
 					</div>
-					
-					
 					<div class="col-xs-12 col-md-3">
 						<div class="form-group label-formulario">
-							<label for="status">Quantidade</label> <span>*</span>
+							<label for="categoria">Categoria</label>
+							<select 
+								class="form-control"
+								name="categoria" 
+								id="categoria" 
+								ng-model="alimentos.categoria"
+								ng-class="{ error: formulario.categoria.$invalid &&  ( formulario.$submitted || formulario.categoria.$touched ) }" 
+								required>
+									<option>Enlatados</option>
+									<option>Cereais</option>
+									<option>Pereciveis</option>                                    
+							</select> 
+							<span class="form‐control text-red" ng-show="formulario.categoria.$invalid &&  ( formulario.$submitted || formulario.categoria.$touched )">
+									Campo Obrigatório 
+							</span>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-3">
+						<div class="form-group label-formulario">
+							<label for="quantidade">Quantidade</label> <span>*</span>
 							<input 
 								type="number" 
 								id="quantidade"
 								class="form-control" 
 								name="quantidade"
-								ng-model="produto.status"
-								ng-class="{ error: formulario.status.$invalid &&  ( formulario.$submitted || formulario.status.$touched ) }" 
+								ng-model="alimento.quantidade"
+								ng-class="{ error: formulario.quantidade.$invalid &&  ( formulario.$submitted || formulario.quantidade.$touched ) }" 
 								required>
-							<span class="form‐control text-red" ng-show="formulario.status.$invalid &&  ( formulario.$submitted || formulario.status.$touched )">
-								Campo Obrigatório 
-							</span>
-						</div>
-					</div>
-
-
-					<div class="col-xs-12 col-md-3">
-						<div class="form-group label-formulario">
-							<label for="price">vencimento</label> <span>*</span>
-							<input 
-								type="date" 
-								id="vencimento" 
-								class="form-control" 
-								name="vencimento"
-								ng-model="produto.price"
-								ng-class="{ error: formulario.price.$invalid &&  ( formulario.$submitted || formulario.price.$touched ) }" 
-								required>
-							<span class="form‐control text-red" ng-show="formulario.price.$invalid &&  ( formulario.$submitted || formulario.price.$touched )">
+							<span class="form‐control text-red" ng-show="formulario.quantidade.$invalid &&  ( formulario.$submitted || formulario.quantidade.$touched )">
 								Campo Obrigatório 
 							</span>
 						</div>
 					</div>
 				</div>
-
-
-				
+				<div class="row">		
 					<div class="col-xs-12 col-md-3">
 						<div class="form-group label-formulario">
-							<label for="percentagem">Data Entrada</label> <span>*</span>
+							<label for="validade">Validade</label> <span>*</span>
 							<input 
 								type="date" 
-								id="data_entrada" 
+								id="validade" 
 								class="form-control" 
-								name="data_entrada" 
-								ng-model="produto.percentagem"
-								ng-class="{ error: formulario.percentagem.$invalid &&  ( formulario.$submitted || formulario.percentagem.$touched ) }" 
+								name="validade"
+								ng-model="alimento.validade"
+								ng-class="{ error: formulario.validade.$invalid &&  ( formulario.$submitted || formulario.validade.$touched ) }" 
 								required>
-							<span class="form‐control text-red" ng-show="formulario.percentagem.$invalid &&  ( formulario.$submitted || formulario.percentagem.$touched )">
-									Campo Obrigatório 
+							<span class="form‐control text-red" ng-show="formulario.validade.$invalid &&  ( formulario.$submitted || formulario.validade.$touched )">
+								Campo Obrigatório 
 							</span>
 						</div>
 					</div>
-
-
 					<div class="col-xs-12 col-md-3">
 						<div class="form-group label-formulario">
-							<label for="percentagem">Data Saída</label> <span>*</span>
+							<label for="valor">Valor</label> <span>*</span>
 							<input 
-								type="date" 
-								id="data_saida" 
+								type="number" 
+								id="valor" 
 								class="form-control" 
-								name="data_saida" 
-								ng-model="produto.percentagem"
-								ng-class="{ error: formulario.percentagem.$invalid &&  ( formulario.$submitted || formulario.percentagem.$touched ) }" 
+								name="valor" 
+								ng-model="alimento.valor"
+								ng-class="{ error: formulario.valor.$invalid &&  ( formulario.$submitted || formulario.valor.$touched ) }" 
 								required>
-							<span class="form‐control text-red" ng-show="formulario.percentagem.$invalid &&  ( formulario.$submitted || formulario.percentagem.$touched )">
+							<span class="form‐control text-red" ng-show="formulario.valor.$invalid &&  ( formulario.$submitted || formulario.valor.$touched )">
 									Campo Obrigatório 
 							</span>
 						</div>
 					</div>
-					
-					
-					<div class="col-xs-12 col-md-6">
-						<div class="form-group label-formulario">
-							<label for="percentagem">Tipo Saída</label> <span>*</span>
-							<input 
-								type="text" 
-								id="percentagem" 
-								class="form-control" 
-								name="tipo_saida" 
-								ng-model="produto.percentagem"
-								ng-class="{ error: formulario.percentagem.$invalid &&  ( formulario.$submitted || formulario.percentagem.$touched ) }" 
-								required>
-							<span class="form‐control text-red" ng-show="formulario.percentagem.$invalid &&  ( formulario.$submitted || formulario.percentagem.$touched )">
-									Campo Obrigatório 
-							</span>
-						</div>
-					</div>
-				
-
-				
+				</div>		
+				<div class="row">
 					<div class="col-xs-12 col-md-12">
-						<label for="note">Nota</label>
-						<textarea class="form-control label-formulario" rows="3" maxlength="381" placeholder="Notas" name="note" ng-model="produto.note">       
+						<label for="nota">Nota</label>
+						<textarea class="form-control label-formulario" 
+											rows="3" 
+											maxlength="381" 
+											placeholder="Notas" 
+											name="nota" 
+											ng-model="alimento.nota">       
 						</textarea>
 					</div>
-					<div class="col-xs-12 col-md-12 btn-crud">
-							<!-- ng-disabled="formulario.$invalid" -->
-						<button  type="submit" class="btn btn-primary">Salvar</button>
-						<a href="#/alimentos" class="btn btn-default">Voltar</a>
-						<!--<button  ng-click="remover(produto)"type="button" class="btn btn-danger">Delete</button>-->
-					</div>
-				
-      </div>
-    </form>
+				</div>	
+				<div class="col-xs-12 col-md-12 btn-crud">
+						<!-- ng-disabled="formulario.$invalid" -->
+					<button  type="submit" class="btn btn-primary">Salvar</button>
+					<a href="#/alimentos" class="btn btn-default">Voltar</a>
+					<!--<button  ng-click="remover(alimento)"type="button" class="btn btn-danger">Delete</button>-->
+				</div>
+    	</form>
     </div>
 </div>

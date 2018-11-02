@@ -12,6 +12,7 @@ module.exports = function () {
         validade: String,
         tipo:String,
         quantidade: Number,
+        valor: Number,
         nota: String
     });
 

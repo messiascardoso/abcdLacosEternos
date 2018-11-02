@@ -27,6 +27,8 @@
     "angular-sanitize": "1.5.8",
     "angular-input-masks": "2.5.0",
     "angular-loading-bar": "0.9.0",
-    "angularjs-datepicker": "2.1.14"
+    "angularjs-datepicker": "2.1.14",
+    "sweetalert": "^2.1.2",
+    "ngSweetAlert": "angular-sweetalert#^1.1.2"
   }
 }

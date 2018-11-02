@@ -1,16 +1,16 @@
-angular.module('abcdlacosEternos').controller('ClienteController',
-    function ($scope, $http, $stateParams, $location, ModalAlertService, Profile, ClienteServices, SweetAlert) {  //$routeParams
+angular.module('abcdlacosEternos').controller('AlimentoController',
+    function ($scope, $http, $stateParams, $location, ModalAlertService, Profile, AlimentoServices) {  //$routeParams
 
-    $scope.cliente = {};
+    $scope.alimento = {};
 		$scope.mensagem = '';
 		//Recebe funcao de validaçao de profile 
 		$scope.profile = Profile;
 
-		//Get cliente ID
-		if ($stateParams.clienteId) {
-			ClienteServices.get($stateParams.clienteId)
-				.success(function (cliente) {
-					$scope.cliente = cliente;
+		//Get alimento ID
+		if ($stateParams.alimentoId) {
+			AlimentoServices.get($stateParams.alimentoId)
+				.success(function (alimento) {
+					$scope.alimento = alimento;
 				})
 				.error(function (error) {
 					$scope.mensagem = 'Error writing';
@@ -21,14 +21,13 @@ angular.module('abcdlacosEternos').controller('ClienteController',
 		//Salva usuario ou Update
 		$scope.submeter = function (formulario) {
 			if (formulario.$valid) {
-				if ($scope.cliente._id) {
-					ClienteServices.update($stateParams.clienteId, $scope.cliente )
+				if ($scope.alimento._id) {
+					AlimentoServices.update($stateParams.alimentoId, $scope.alimento )
 						.success(function () {
-							$scope.cliente = {};
+							$scope.alimento = {};
 							formulario.$setPristine();
 							formulario.$setUntouched();
-							SweetAlert.swal("Cliente", "Atualizado com sucesso!", "success");
-						
+							ModalAlertService.open('lg');
 						})
 						.error(function (error) {
 								$scope.mensagem = 'Error writing';
@@ -36,15 +35,13 @@ angular.module('abcdlacosEternos').controller('ClienteController',
 						});
 					} else {
 					
-						ClienteServices.save($scope.cliente)
+						AlimentoServices.save($scope.alimento)
 							.success(function (retorno) {
 								$scope.mensagem = 'Salve successfully';
 								$scope.status = "alert alert-success";
 								formulario.$setPristine();
 								formulario.$setUntouched();
-								$scope.cliente = {};
-								SweetAlert.swal("Cliente", "Salvo com sucesso!", "success");
-
+								$scope.alimento = {};
 							})
 							.error(function (erro) {
 								$scope.mensagem = 'Error writing';

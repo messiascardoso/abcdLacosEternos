@@ -5,7 +5,10 @@
 				<p>{{ formulario.$invalid }}</p>
     </div>
     <div class="box-body">
-			<form name="formulario" novalidate ng-submit="submeter(formulario)" class="">
+			<form name="formulario"
+						autocomplete="off" 
+						novalidate ng-submit="submeter(formulario)" 
+						class="">
 				<div class="row">
 					<div class="col-xs-12 col-md-6">
 						<div class="form-group label-formulario">
@@ -17,7 +20,7 @@
 								name="name" 
 								ng-model="produto.name" 
 								required>
-							<span class="form‐control text-red" ng-show="formulario.name.$invalid &&  ( formulario.$submitted || formulario.name.$touched )">
+							<span class="text-red" ng-show="formulario.name.$invalid &&  ( formulario.$submitted || formulario.name.$touched )">
 									Campo Obrigatório
 							</span>
 						</div>
@@ -33,11 +36,13 @@
 									ng-class="{ error: formulario.description.$invalid &&  ( formulario.$submitted || formulario.description.$touched ) }" 
 									ng-model="produto.description"
 									required>
-									<span class="form‐control text-red" ng-show="formulario.description.$invalid &&  ( formulario.$submitted || formulario.description.$touched )">
+									<span class=" text-red" ng-show="formulario.description.$invalid &&  ( formulario.$submitted || formulario.description.$touched )">
 											Campo Obrigatório
 									</span>
 							</div>
 					</div>
+				</div>
+				<div class="row">
 					<div class="col-xs-12 col-md-3">
 						<div class="form-group label-formulario">
 							<label for="categoria">Categoria</label>
@@ -52,7 +57,7 @@
 									<option>Vestido</option>
 									<option>Calca</option>                                    
 							</select> 
-							<span class="form‐control text-red" ng-show="formulario.categoria.$invalid &&  ( formulario.$submitted || formulario.categoria.$touched )">
+							<span class=" text-red" ng-show="formulario.categoria.$invalid &&  ( formulario.$submitted || formulario.categoria.$touched )">
 									Campo Obrigatório 
 							</span>
 						</div>
@@ -68,7 +73,7 @@
 								ng-model="produto.status"
 								ng-class="{ error: formulario.status.$invalid &&  ( formulario.$submitted || formulario.status.$touched ) }" 
 								required>
-							<span class="form‐control text-red" ng-show="formulario.status.$invalid &&  ( formulario.$submitted || formulario.status.$touched )">
+							<span class=" text-red" ng-show="formulario.status.$invalid &&  ( formulario.$submitted || formulario.status.$touched )">
 								Campo Obrigatório 
 							</span>
 						</div>
@@ -84,7 +89,7 @@
 								ng-model="produto.price"
 								ng-class="{ error: formulario.price.$invalid &&  ( formulario.$submitted || formulario.price.$touched ) }" 
 								required>
-							<span class="form‐control text-red" ng-show="formulario.price.$invalid &&  ( formulario.$submitted || formulario.price.$touched )">
+							<span class=" text-red" ng-show="formulario.price.$invalid &&  ( formulario.$submitted || formulario.price.$touched )">
 								Campo Obrigatório 
 							</span>
 						</div>
@@ -100,16 +105,18 @@
 								ng-model="produto.percentagem"
 								ng-class="{ error: formulario.percentagem.$invalid &&  ( formulario.$submitted || formulario.percentagem.$touched ) }" 
 								required>
-							<span class="form‐control text-red" ng-show="formulario.percentagem.$invalid &&  ( formulario.$submitted || formulario.percentagem.$touched )">
+							<span class=" text-red" ng-show="formulario.percentagem.$invalid &&  ( formulario.$submitted || formulario.percentagem.$touched )">
 									Campo Obrigatório 
 							</span>
 						</div>
 					</div>
+				</div>
+				<div class="row">
 					<div class="col-xs-12 col-md-3">
 						<div class="form-group label-formulario">
 							<label for="size">Tamanho</label><span>*</span>
 							<input type="text" id="size" class="form-control" name="size" ng-model="produto.size" required >
-							<span class="form‐control text-red" ng-show="formulario.$submitted && formulario.size.$error">
+							<span class=" text-red" ng-show="formulario.$submitted && formulario.size.$error">
 									Campo Obrigatório 
 							</span>
 						</div>
@@ -133,11 +140,13 @@
 								name="quantidade"
 								ng-class="{ error: formulario.quantidade.$invalid &&  ( formulario.$submitted || formulario.quantidade.$touched ) }" 
 								ng-model="produto.quantidade">
-								<span class="form‐control text-red" ng-show="formulario.quantidade.$invalid &&  ( formulario.$submitted || formulario.quantidade.$touched )">
+								<span class=" text-red" ng-show="formulario.quantidade.$invalid &&  ( formulario.$submitted || formulario.quantidade.$touched )">
 										Campo Obrigatório 
 								</span>
 						</div>
 					</div>
+				</div>
+				<div class="row">	
 					<div class="col-xs-12 col-md-12">
 						<label for="note">Nota</label>
 						<textarea class="form-control label-formulario" rows="3" maxlength="381" placeholder="Notas" name="note" ng-model="produto.note">       
@@ -149,6 +158,7 @@
 						<a href="#/produtos" class="btn btn-default">Voltar</a>
 						<!--<button  ng-click="remover(produto)"type="button" class="btn btn-danger">Delete</button>-->
 					</div>
+				</div>
       </div>
     </form>
     </div>

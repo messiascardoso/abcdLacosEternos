@@ -10,7 +10,7 @@ module.exports = function () {
         municipio: String,
         estado: String,
         email: String,
-        telefone: Number,
+        telefone: String,
     });
 
     mongoose.set("debug", true);

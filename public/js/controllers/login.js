@@ -21,7 +21,7 @@ angular.module("abcdlacosEternos")
                 .success(function (profile) {
                     var user = profile;
                     Profile.setRoles(user.profile);
-                    sessionStorage.setItem("Togo", JSON.stringify(user));
+                    sessionStorage.setItem("lacosEternos", JSON.stringify(user));
                     $location.path('/dashboard');
                           
                 })

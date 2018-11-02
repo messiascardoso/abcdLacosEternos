@@ -2,7 +2,7 @@ angular.module('abcdlacosEternos').controller('PerfilController',
     function ($scope,$http, $stateParams, $location, Profile) {  //$routeParams
 
     //Get profile gravado no SessionStorage
-    var userTogo = JSON.parse(sessionStorage.getItem("Togo"));
+    var userTogo = JSON.parse(sessionStorage.getItem("lacosEternos"));
 
     // Valida a permissao conforme profile 
     Profile.setRoles(userTogo.profile);
@@ -13,7 +13,14 @@ angular.module('abcdlacosEternos').controller('PerfilController',
     //View email/profile to user logado
     $scope.UserProfile = userTogo;
 
-    
+    angular.element('nav .sidebar-toggle ').click(function() {
+        angular.element( '.sidebar-mini' ).toggleClass('sidebar-collapse');
+    });
+
+
+    // $( "p" ).click(function() {
+    //     $( this ).toggleClass( "highlight" );
+    //   });
     
 
 

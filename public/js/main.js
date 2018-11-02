@@ -1,7 +1,7 @@
 
 
 
-angular.module('abcdlacosEternos', ['ngResource', 'ui.router', 'ui.mask', 'ngFileUpload', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'angular-loading-bar', '720kb.datepicker'])
+angular.module('abcdlacosEternos', ['ngResource', 'ui.router', 'ui.mask', 'ngFileUpload', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'angular-loading-bar', '720kb.datepicker', 'oitozero.ngSweetAlert'])
 
     .config(['$urlRouterProvider', '$stateProvider', '$httpProvider',
         function ($urlRouterProvider, $stateProvider, $httpProvider, Profile, RouteAccessService) {
@@ -64,13 +64,13 @@ angular.module('abcdlacosEternos', ['ngResource', 'ui.router', 'ui.mask', 'ngFil
                     templateUrl: 'partials/clientes.html',
                     controller: 'ClientesController',
                     
-								})
-								.state('dash.cliente', {
-									url: '/cliente',
-									templateUrl: 'partials/cliente.html',
-									controller: 'ClienteController',
-									
-								})
+                })
+                .state('dash.cliente', {
+                    url: '/cliente',
+                    templateUrl: 'partials/cliente.html',
+                    controller: 'ClienteController',
+                    
+                })
                 .state('dash.cliente/:clienteId', {
                     url: '/cliente/:clienteId',
                     templateUrl: 'partials/cliente.html',
@@ -80,13 +80,13 @@ angular.module('abcdlacosEternos', ['ngResource', 'ui.router', 'ui.mask', 'ngFil
                 .state('dash.alimentos', {
                     url: '/alimentos',
                     templateUrl: 'partials/alimentos.html',
-                    // controller: 'ProdutosController',
+                    controller: 'AlimentosController',
                     
                 })
                 .state('dash.alimento', {
                     url: '/alimento',
                     templateUrl: 'partials/alimento.html',
-                    // controller: 'ProdutosController',
+                    controller: 'AlimentoController',
                     
                 })
                 .state('user', {

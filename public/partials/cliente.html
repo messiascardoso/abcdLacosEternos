@@ -4,7 +4,11 @@
 				<h3 class="box-title">Cadastrar Cliente</h3>
     </div>
     <div class="box-body">
-			<form name="formulario" novalidate ng-submit="submeter(formulario)" class="">
+			<form autocomplete="off" 
+						class=""
+						name="formulario"
+						novalidate 
+						ng-submit="submeter(formulario)">
 				<div class="row">
 					<div class="col-xs-12 col-md-6">
 						<div class="form-group label-formulario">
@@ -16,13 +20,11 @@
 								name="name" 
 								ng-model="cliente.name" 
 								required>
-							<span class="form‐control text-red" ng-show="formulario.name.$invalid &&  ( formulario.$submitted || formulario.name.$touched )">
+							<span class=" text-red" ng-show="formulario.name.$invalid &&  ( formulario.$submitted || formulario.name.$touched )">
 									Campo Obrigatório
 							</span>
 						</div>
 					</div>
-
-
 					<div class="col-xs-12 col-md-6">
 							<div class="form-group label-formulario">
 								<label for="endereco">Endereço</label><span>*</span>
@@ -34,13 +36,12 @@
 									ng-class="{ error: formulario.endereco.$invalid &&  ( formulario.$submitted || formulario.endereco.$touched ) }" 
 									ng-model="cliente.endereco"
 									required>
-									<span class="form‐control text-red" ng-show="formulario.endereco.$invalid &&  ( formulario.$submitted || formulario.endereco.$touched )">
+									<span class=" text-red" ng-show="formulario.endereco.$invalid &&  ( formulario.$submitted || formulario.endereco.$touched )">
 											Campo Obrigatório
 									</span>
 							</div>
 					</div>
 				</div>	
-
 				<div class="row">
 					<div class="col-xs-12 col-md-2">
 						<div class="form-group label-formulario">
@@ -53,7 +54,7 @@
 								ng-class="{ error: formulario.numero.$invalid &&  ( formulario.$submitted || formulario.numero.$touched ) }" 
 								ng-model="cliente.numero"
 								required>
-							<span class="form‐control text-red" ng-show="formulario.numero.$invalid &&  ( formulario.$submitted || formulario.numero.$touched )">
+							<span class=" text-red" ng-show="formulario.numero.$invalid &&  ( formulario.$submitted || formulario.numero.$touched )">
 									Campo Obrigatório 
 							</span>
 						</div>
@@ -69,7 +70,7 @@
 								ng-model="cliente.bairro"
 								ng-class="{ error: formulario.bairro.$invalid &&  ( formulario.$submitted || formulario.bairro.$touched ) }" 
 								required>
-							<span class="form‐control text-red" ng-show="formulario.bairro.$invalid &&  ( formulario.$submitted || formulario.bairro.$touched )">
+							<span class=" text-red" ng-show="formulario.bairro.$invalid &&  ( formulario.$submitted || formulario.bairro.$touched )">
 								Campo Obrigatório 
 							</span>
 						</div>
@@ -85,7 +86,7 @@
 								ng-model="cliente.municipio"
 								ng-class="{ error: formulario.municipio.$invalid &&  ( formulario.$submitted || formulario.municipio.$touched ) }" 
 								required>
-							<span class="form‐control text-red" ng-show="formulario.municipio.$invalid &&  ( formulario.$submitted || formulario.municipio.$touched )">
+							<span class=" text-red" ng-show="formulario.municipio.$invalid &&  ( formulario.$submitted || formulario.municipio.$touched )">
 								Campo Obrigatório 
 							</span>
 						</div>
@@ -101,43 +102,37 @@
 								ng-model="cliente.estado"
 								ng-class="{ error: formulario.estado.$invalid &&  ( formulario.$submitted || formulario.estado.$touched ) }" 
 								required>
-							<span class="form‐control text-red" ng-show="formulario.estado.$invalid &&  ( formulario.$submitted || formulario.estado.$touched )">
+							<span class=" text-red" ng-show="formulario.estado.$invalid &&  ( formulario.$submitted || formulario.estado.$touched )">
 									Campo Obrigatório 
 							</span>
 						</div>
 					</div>
 				</div>
-				
 				<div class="row">
-
 					<div class="col-xs-12 col-md-4">
 						<div class="form-group label-formulario">
-							<label for="telefone">Telefone</label><span>*</span>
+							<label for="telefone">Telefone {{ cliente.telefone }}</label><span>*</span>
 							<input 
 								type="text" 
 								id="" 
 								class="form-control" 
 								name="telefone" 
-								ng-model="cliente.telefone" 
-								required >
-							<span class="form‐control text-red" ng-show="formulario.$submitted && formulario.telefone.$error">
+								ng-model="cliente.telefone">
+							<span class=" text-red" ng-show="formulario.telefone.$invalid && ( formulario.$submitted || formulario.email.$touched )">
 									Campo Obrigatório 
 							</span>
 						</div>
 					</div>
-					
-
 					<div class="col-xs-12 col-md-6">
 						<div class="form-group label-formulario">
-							<label for="email">E-mail</label><span>*</span>
+							<label for="email">E-mail {{  cliente.email }}</label><span>*</span>
 							<input 
 								type="text" 
 								id="" 
 								class="form-control" 
 								name="email" 
-								ng-model="cliente.email" 
-								required >
-							<span class="form‐control text-red" ng-show="formulario.$submitted && formulario.email.$error">
+								ng-model="cliente.email">
+							<span class=" text-red" ng-show="formulario.email.$invalid && ( formulario.$submitted || formulario.email.$touched )">
 									Campo Obrigatório 
 							</span>
 						</div>

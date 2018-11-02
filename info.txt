@@ -1,0 +1,14 @@
+swal({
+  title: "Certeza que deseja deletar?" ,
+  text: cliente.name,
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then( function (btnResult){
+  if (btnResult) {
+    if (cliente._id) {
+      swal("Cliente", "Deletado com sucesso!", "success");
+      }
+  } 
+});

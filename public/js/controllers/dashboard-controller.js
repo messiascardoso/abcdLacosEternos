@@ -20,7 +20,7 @@ angular.module('abcdlacosEternos').controller('DashboardController',
 
 
         //Get profile gravado no SessionStorage
-        var userTogo = JSON.parse(sessionStorage.getItem("Togo"));
+        var userTogo = JSON.parse(sessionStorage.getItem("lacosEternos"));
 
         if (userTogo.profile == "ADMIN") {
 
