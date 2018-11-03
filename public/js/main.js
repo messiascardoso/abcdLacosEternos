@@ -1,7 +1,7 @@
 
 
 
-angular.module('abcdlacosEternos', ['ngResource', 'ui.router', 'ui.mask', 'ngFileUpload', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'angular-loading-bar', '720kb.datepicker', 'oitozero.ngSweetAlert'])
+angular.module('abcdlacosEternos', ['ngResource', 'ui.router', 'ui.mask', 'ngFileUpload', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'angular-loading-bar', '720kb.datepicker', 'oitozero.ngSweetAlert', 'ui.utils.masks'])
 
     .config(['$urlRouterProvider', '$stateProvider', '$httpProvider',
         function ($urlRouterProvider, $stateProvider, $httpProvider, Profile, RouteAccessService) {
@@ -85,6 +85,12 @@ angular.module('abcdlacosEternos', ['ngResource', 'ui.router', 'ui.mask', 'ngFil
                 })
                 .state('dash.alimento', {
                     url: '/alimento',
+                    templateUrl: 'partials/alimento.html',
+                    controller: 'AlimentoController',
+                    
+                })
+                .state('dash.alimento/:alimentoId', {
+                    url: '/alimento/:alimentoId',
                     templateUrl: 'partials/alimento.html',
                     controller: 'AlimentoController',
                     

@@ -1,5 +1,5 @@
 angular.module('abcdlacosEternos').controller('AlimentoController',
-    function ($scope, $http, $stateParams, $location, ModalAlertService, Profile, AlimentoServices) {  //$routeParams
+    function ($scope, $http, $stateParams, $location, ModalAlertService, Profile, AlimentoServices, SweetAlert) {  //$routeParams
 
     $scope.alimento = {};
 		$scope.mensagem = '';
@@ -27,7 +27,7 @@ angular.module('abcdlacosEternos').controller('AlimentoController',
 							$scope.alimento = {};
 							formulario.$setPristine();
 							formulario.$setUntouched();
-							ModalAlertService.open('lg');
+							SweetAlert.swal("Alimento", "Atualizado com sucesso!", "success");
 						})
 						.error(function (error) {
 								$scope.mensagem = 'Error writing';
@@ -42,6 +42,7 @@ angular.module('abcdlacosEternos').controller('AlimentoController',
 								formulario.$setPristine();
 								formulario.$setUntouched();
 								$scope.alimento = {};
+								SweetAlert.swal("Alimento", "Salvo com sucesso!", "success");
 							})
 							.error(function (erro) {
 								$scope.mensagem = 'Error writing';

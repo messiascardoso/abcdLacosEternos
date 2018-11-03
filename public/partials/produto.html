@@ -88,6 +88,7 @@
 								name="price" 
 								ng-model="produto.price"
 								ng-class="{ error: formulario.price.$invalid &&  ( formulario.$submitted || formulario.price.$touched ) }" 
+								ui-money-mask
 								required>
 							<span class=" text-red" ng-show="formulario.price.$invalid &&  ( formulario.$submitted || formulario.price.$touched )">
 								Campo Obrigatório 

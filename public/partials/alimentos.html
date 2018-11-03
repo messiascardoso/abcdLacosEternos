@@ -21,26 +21,21 @@
 						<table class="table table-hover">
 							<tbody>
 								<tr>
-									<th class="titulo-tabela">Descrição</th>
+									<th class="titulo-tabela">Nome</th>
+									<th class="titulo-tabela">Validade</th>
+									<th class="titulo-tabela">Categoria</th>
 									<th class="titulo-tabela">Quantidade</th>
-									<th class="titulo-tabela">Vencimento</th>
-									<th class="titulo-tabela">Data Entrada</th>
-									<th class="titulo-tabela">Data Saída</th>
-									<th class="titulo-tabela">Tipo Saída</th>
 									<th class="titulo-tabela">DELETE</th>
 								</tr>
-								<tr ng-repeat="produto in produtos | filter: filtro">
-									<td>
-											<a ng-href="#/produto/{{produto._id}}"><i class="fa fa-edit"></i> {{produto.name | uppercase}}</a>
+								<tr ng-repeat="alimento in alimentos | filter: filtro">
+									<td class="text-capitalize">
+											<a ng-href="#/alimento/{{alimento._id}}"><i class="fa fa-edit"></i> {{alimento.nome | uppercase}}</a>
 									</td>
-									<!--
-									<td>{{produto.category | uppercase}}</td>
-									<td>{{produto.size | uppercase}}</td>
-									<td>{{produto.genero | uppercase}}</td>
-									<td>{{produto.price | uppercase}}</td>
-									-->
+									<td class="text-capitalize">{{alimento.validade | uppercase}}</td>
+									<td class="text-capitalize">{{alimento.categoria | uppercase}}</td>
+									<td class="text-capitalize">{{alimento.quantidade | uppercase}}</td>
 									<td class="text-center">
-											<button ng-click="deletar(produto)" class="btn btn-warning botao-excluir"><i class="-plus et-down fa fa-lg fa-trash text-muted"></i></buttom>
+											<button ng-click="deletar(alimento)" class="btn btn-warning botao-excluir"><i class="-plus et-down fa fa-lg fa-trash text-muted"></i></buttom>
 									</td>
 								</tr>
 							</tbody>

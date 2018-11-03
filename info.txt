@@ -1,3 +1,9 @@
+https://assisrafael.github.io/angular-input-masks/
+https://github.com/720kb/angular-datepicker
+https://sweetalert.js.org/docs/
+https://github.com/ghiden/angucomplete-alt
+
+
 swal({
   title: "Certeza que deseja deletar?" ,
   text: cliente.name,

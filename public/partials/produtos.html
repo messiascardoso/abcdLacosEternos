@@ -35,7 +35,7 @@
 									<td>{{produto.category | uppercase}}</td>
 									<td>{{produto.size | uppercase}}</td>
 									<td>{{produto.genero | uppercase}}</td>
-									<td>{{produto.price | uppercase}}</td>
+									<td>{{produto.price | uppercase | currency : 'R$' : 2 }}</td>
 									<td class="text-center">
 											<button ng-click="deletar(produto)" class="btn btn-warning botao-excluir"><i class="-plus et-down fa fa-lg fa-trash text-muted"></i></buttom>
 									</td>

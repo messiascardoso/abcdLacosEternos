@@ -111,21 +111,22 @@
 				<div class="row">
 					<div class="col-xs-12 col-md-4">
 						<div class="form-group label-formulario">
-							<label for="telefone">Telefone {{ cliente.telefone }}</label><span>*</span>
+							<label for="telefone">Telefone</label><span>*</span>
 							<input 
 								type="text" 
 								id="" 
 								class="form-control" 
-								name="telefone" 
+								name="tel"
+								ui-br-phone-number-mask="areaCode" 
 								ng-model="cliente.telefone">
-							<span class=" text-red" ng-show="formulario.telefone.$invalid && ( formulario.$submitted || formulario.email.$touched )">
+							<span class="text-red" ng-show="formulario.telefone.$invalid && ( formulario.$submitted || formulario.email.$touched )">
 									Campo Obrigatório 
 							</span>
 						</div>
 					</div>
 					<div class="col-xs-12 col-md-6">
 						<div class="form-group label-formulario">
-							<label for="email">E-mail {{  cliente.email }}</label><span>*</span>
+							<label for="email">E-mail </label><span>*</span>
 							<input 
 								type="text" 
 								id="" 

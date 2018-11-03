@@ -64,29 +64,32 @@
 					<div class="col-xs-12 col-md-3">
 						<div class="form-group label-formulario">
 							<label for="validade">Validade</label> <span>*</span>
-							<input 
-								type="date" 
-								id="validade" 
-								class="form-control" 
-								name="validade"
-								ng-model="alimento.validade"
-								ng-class="{ error: formulario.validade.$invalid &&  ( formulario.$submitted || formulario.validade.$touched ) }" 
-								required>
-							<span class="form‐control text-red" ng-show="formulario.validade.$invalid &&  ( formulario.$submitted || formulario.validade.$touched )">
-								Campo Obrigatório 
-							</span>
+							<datepicker date-format="dd-MM-yyyy">
+								<input 
+									type="text" 
+									id="validade" 
+									class="form-control" 
+									name="validade"
+									ng-model="alimento.validade"
+									ng-class="{ error: formulario.validade.$invalid &&  ( formulario.$submitted || formulario.validade.$touched ) }" 
+									required>
+								<span class="form‐control text-red" ng-show="formulario.validade.$invalid &&  ( formulario.$submitted || formulario.validade.$touched )">
+									Campo Obrigatório 
+								</span>
+							</datepicker>
 						</div>
 					</div>
 					<div class="col-xs-12 col-md-3">
 						<div class="form-group label-formulario">
 							<label for="valor">Valor</label> <span>*</span>
 							<input 
-								type="number" 
+								type="text" 
 								id="valor" 
 								class="form-control" 
 								name="valor" 
 								ng-model="alimento.valor"
 								ng-class="{ error: formulario.valor.$invalid &&  ( formulario.$submitted || formulario.valor.$touched ) }" 
+								ui-money-mask
 								required>
 							<span class="form‐control text-red" ng-show="formulario.valor.$invalid &&  ( formulario.$submitted || formulario.valor.$touched )">
 									Campo Obrigatório 
