@@ -9,7 +9,7 @@
     <body>
         <div class="container-fluid clearfix" style="width: 100%">
             <div class="container-fluid corFundo clearfix">
-                <h1>Caixa</h1>
+                <h1 class="vendas-titulo">Vendas</h1>
             </div>
 
 
@@ -19,65 +19,129 @@
                     <div class="col-xs-12 col-md-2">
                         <div class="input-group">
                             <label>Código</label>
-                                <input type="number" class="form-control" aria-describedby="basic-addon1" name="codigoProd">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1" name="codigoProd">
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-1" style="margin-right: 10px">
                         <div class="input-group">
                             <label>Quantidade</label>
-                            <input type="number" class="form-control" aria-describedby="basic-addon1" name="quantProd">
+														<input type="number" 
+																	 class="form-control" 
+																	 aria-describedby="basic-addon1"
+																	 ng-model="produto.quantProd"
+																	 name="quantProd">
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-4">
-                        <div class="input-group" style="width: 100%">
+                        <!-- <div class="" style="width: 100%"> -->
                             <label>Produto</label>
-                            <input type="text" class="form-control" aria-describedby="basic-addon1" name="nomeProd">
-                        </div>
+                            <!-- <input type="text" class="form-control" aria-describedby="basic-addon1" name="nomeProd"> -->
+                            <div angucomplete-alt
+                                id="ex6"
+                                placeholder="Procurar produtos"
+                                pause="100"
+                                selected-object="produtoSelected"
+                                local-data="produtos"
+                                search-fields="name"
+                                title-field="name"
+                                description-field="price"
+                                minlength="1"
+                                input-class="form-control form-control-small"
+                                match-class="highlight">
+                            </div>
+                        <!-- </div> -->
                     </div>
                     <div class="col-xs-12 col-md-1">
                         <div class="input-group">
                             <label>Estoque</label>
-                            <input type="text" class="form-control" aria-describedby="basic-addon1" name="quantEstoque">
+														<input  
+															type="text" 
+															class="form-control"
+															disabled 	
+															aria-describedby="basic-addon1"
+															ng-model="produtoSelected.originalObject.amount"  
+															name="quantEstoque">
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-2">
                             <label>Valor Unitário</label>   
                         <div class="input-group">
-                            
                             <span class="input-group-addon">R$</span>
-                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="valor">
+														<input 
+															type="text" 
+															class="form-control" 
+															ng-model="produtoSelected.originalObject.price" 
+															name="valor">
                         </div>
                     </div>
                     <div class="col-md-1">
                         <label></label>
-                        <div class="btn btn-primary">
+												<div class="btn btn-primary"
+															ng-click="addProduto( produtoSelected.originalObject )" >
                             <i class="glyphicon glyphicon-plus"></i>Adicionar
                         </div>
                     </div>
                 </div>
-            </div>
+						</div>
+						<!-- <p>Debug:{{ produtoSelected }}</p> -->
+
             <hr style="border: 1px solid">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-2" style="border: 1px solid">
+                    <!-- <div class="col-md-2" style="border: 1px solid">
                         <div class="container-fluid">
                             <img src="partials/photo.svg" class="img-responsive" alt="Responsive image">
                         </div>
-                    </div>
-                    <div class="col-md-10">
+                    </div> -->
+                    <!-- <div class="col-md-10">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Código</th>
+                                        <th></th>
                                         <th>Descrição</th>
                                         <th>Quantidade</th>
                                         <th>Preço Unitário</th>
                                     </tr>
-
-                                </thead>
+																</thead>
+																<tr></tr>
                                 
                             </table>
-                    </div>
+										</div> -->
+										<div class="col-sm-12">
+												<div class="table-responsive">
+													<table class="table table-hover">
+														<tbody>
+															<tr>
+																<th class="titulo-tabela">Código</th>
+																<th class="titulo-tabela">Descrição</th>
+																<th class="titulo-tabela">Quantidade</th>
+																<th class="titulo-tabela">Preço Unitário</th>
+																<th class="titulo-tabela">Valor Total</th>
+																<th class="titulo-tabela">DELETE</th>
+															</tr>
+															<tr ng-repeat="item in cestaProdutos">
+																<td class="text-capitalize">{{ item.name | uppercase }}</td>
+																<td class="text-capitalize">{{ item.description | uppercase }}</td>
+																<td class="text-capitalize">{{ item.quantProd | uppercase }}</td>
+																<td class="text-capitalize">{{ item.price | uppercase | currency : 'R$' : 2 }}</td>
+																<td class="text-capitalize">{{ item.totalItemQtde  | currency : 'R$' : 2 }}</td>
+																<td class="text-center">
+																		<button ng-click="deletar(item)" class="btn btn-warning botao-excluir"><i class="-plus et-down fa fa-lg fa-trash text-muted"></i></buttom>
+																</td>
+															</tr>
+															<tr>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td class="text-bold">Total Geral: {{ totalGeral | currency : 'R$ ' : 2  }}</td>
+																<td></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+
                 </div>
             </div>
             <br>

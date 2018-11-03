@@ -1,5 +1,5 @@
 angular.module('abcdlacosEternos').controller('ProdutoController',
-    function ($scope, $http, $stateParams, $location, ModalAlertService, Profile, ProdutoServices) {  //$routeParams
+    function ($scope, $http, $stateParams, $location, ModalAlertService, Profile, ProdutoServices, SweetAlert) {  //$routeParams
 
     $scope.produto = {};
 		$scope.mensagem = '';
@@ -15,6 +15,7 @@ angular.module('abcdlacosEternos').controller('ProdutoController',
 				.error(function (error) {
 					$scope.mensagem = 'Error writing';
 					$scope.status = "alert alert-danger";
+					SweetAlert.swal("Produto", "Erro ao gravar!", "info");
 				});
 		}
 
@@ -27,11 +28,12 @@ angular.module('abcdlacosEternos').controller('ProdutoController',
 							$scope.produto = {};
 							formulario.$setPristine();
 							formulario.$setUntouched();
-							ModalAlertService.open('lg');
+							SweetAlert.swal("Produto", "Atualizado com sucesso!", "success");
 						})
 						.error(function (error) {
 								$scope.mensagem = 'Error writing';
 								$scope.status = "alert alert-danger";
+								SweetAlert.swal("Produto", "Erro ao gravar!", "info");
 						});
 					} else {
 					
@@ -42,10 +44,13 @@ angular.module('abcdlacosEternos').controller('ProdutoController',
 								formulario.$setPristine();
 								formulario.$setUntouched();
 								$scope.produto = {};
+								SweetAlert.swal("Produto", "Atualizado com sucesso!", "success");
+
 							})
 							.error(function (erro) {
 								$scope.mensagem = 'Error writing';
 								$scope.status = "alert alert-danger";
+								SweetAlert.swal("Produto", "Erro ao gravar!", "info");
 							});
 						}
 			} else {

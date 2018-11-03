@@ -1,7 +1,7 @@
 
 
 
-angular.module('abcdlacosEternos', ['ngResource', 'ui.router', 'ui.mask', 'ngFileUpload', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'angular-loading-bar', '720kb.datepicker', 'oitozero.ngSweetAlert', 'ui.utils.masks'])
+angular.module('abcdlacosEternos', ['ngResource', 'ui.router', 'ui.mask', 'ngFileUpload', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'angular-loading-bar', '720kb.datepicker', 'oitozero.ngSweetAlert', 'ui.utils.masks', 'angucomplete-alt'])
 
     .config(['$urlRouterProvider', '$stateProvider', '$httpProvider',
         function ($urlRouterProvider, $stateProvider, $httpProvider, Profile, RouteAccessService) {
@@ -53,10 +53,10 @@ angular.module('abcdlacosEternos', ['ngResource', 'ui.router', 'ui.mask', 'ngFil
                     // }
                 })
 
-                .state('dash.caixa', {
-                    url: '/caixa',
-                    templateUrl: 'partials/caixa.html',
-                    // controller: 'ProdutosController',
+                .state('dash.vendas', {
+                    url: '/vendas',
+                    templateUrl: 'partials/vendas.html',
+                    controller: 'VendasController',
                     
                 })
                 .state('dash.clientes', {

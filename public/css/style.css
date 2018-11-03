@@ -265,3 +265,9 @@ body {
 .botoes{
     border-top: 1px solid gray;
 }
+
+.vendas-titulo{
+    margin: 0;
+    padding: 10px;
+    margin-bottom: 22px;
+}
