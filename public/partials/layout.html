@@ -111,6 +111,18 @@
             <li ng-if="profile.isPartner()"><a href="#/partner/{{_partnerID}}"><i class="fa fa-circle-o"></i> Partners</a></li>                  -->
           </ul>
         </li>
+        <li class="treeview" ng-if="profile.isAdmin()">
+          <a href="#/codigos">
+            <i class="fa fa-th"></i> <span>Códigos de Produto</span>           
+            <span class="pull-right-container">
+              <!-- <i class="fa fa-angle-left pull-right"></i> -->
+            </span>
+          </a>
+          <ul class="treeview-menu">            
+            <!-- <li ng-if="profile.isAdmin()"><a href="#/codigos"><i class="fa fa-circle-o"></i>Lista Código</a></li>
+            <li ng-if="profile.isAdmin()"><a href="#/codigo"><i class="fa fa-circle-o"></i>Cadastro</a></li>                  -->
+          </ul>
+        </li>
 
         <li class="treeview" ng-if="profile.isAdmin()">
             <a href="#/clientes">

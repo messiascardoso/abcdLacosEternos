@@ -1,0 +1,46 @@
+<!-- ng-if="profile.isAdmin()" -->
+<div class="box ng-scope">
+    <div class="box-header">
+        <h3 class="box-title">Lista de Codigos</h3>
+    </div>
+    <div class="box-body">
+			<div class="row">
+			<div class="col-md-8 text-center">
+				<div class="form-group has-feedback pull-left">
+					<input class="form-control input-lg filtro-lista" id="pesquisa" placeholder="Filter" type="search" ng-model="filtro">
+					<span class="glyphicon glyphicon-filter fa-fw form-control-feedback"></span>
+				</div>
+			</div>
+			<div class="col-md-3">
+					<a class="btn btn-primary" href="#/codigo" role="button"><i class="glyphicon glyphicon-plus"></i> Novo Codigo</a>
+			</div>
+    </div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="table-responsive">
+						<table class="table table-hover">
+							<tbody>
+								<tr>
+									<th class="titulo-tabela">Codigo</th>
+									<th class="titulo-tabela">Descricao</th>
+									<th class="titulo-tabela">Categoria</th>
+									<th class="titulo-tabela">DELETE</th>
+								</tr>
+								<tr ng-repeat="codigo in codigos | filter: filtro">
+									<td class="text-capitalize">
+											<a ng-href="#/codigo/{{codigo._id}}"><i class="fa fa-edit"></i> {{codigo.codigo | uppercase}}</a>
+									</td>
+									<td class="text-capitalize">{{codigo.validade | uppercase}}</td>
+									<td class="text-capitalize">{{codigo.descricao | uppercase}}</td>
+									<td class="text-capitalize">{{codigo.categoria | uppercase}}</td>
+									<td class="text-center">
+											<button ng-click="deletar(codigo)" class="btn btn-warning botao-excluir"><i class="-plus et-down fa fa-lg fa-trash text-muted"></i></button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+    </div>
+</div>

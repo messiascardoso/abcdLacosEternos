@@ -1,0 +1,73 @@
+
+<div class="box box-info">
+    <div class="box-header with-border">
+				<h3 class="box-title">Cadastrar Codigo</h3>
+    </div>
+    <div class="box-body">
+			<form name="formulario"
+						autocomplete="off" 
+						novalidate ng-submit="submeter(formulario)" 
+						class="">
+				<div class="row">
+					<div class="col-xs-12 col-md-2">
+						<div class="form-group label-formulario">
+							<label for="codigo">Codigo</label> <span>*</span>
+							<input 
+								type="text" 
+								class="form-control" 
+								ng-class="{ error: formulario.codigo.$invalid &&  ( formulario.$submitted || formulario.codigo.$touched ) }"
+								nome="codigo"
+								ng-model="cadastro.codigo" 
+								required>
+							<span class="form‐control text-red" ng-show="formulario.codigo.$invalid &&  ( formulario.$submitted || formulario.codigo.$touched )">
+									Campo Obrigatório
+							</span>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="form-group label-formulario">
+							<label for="descricao">Descrição</label> <span>*</span>
+							<input 
+								type="text" 
+								id="descricao"
+								class="form-control" 
+								name="descricao"
+								ng-model="cadastro.descricao"
+								ng-class="{ error: formulario.descricao.$invalid &&  ( formulario.$submitted || formulario.descricao.$touched ) }" 
+								required>
+							<span class="form‐control text-red" ng-show="formulario.descricao.$invalid &&  ( formulario.$submitted || formulario.descricao.$touched )">
+								Campo Obrigatório 
+							</span>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-3">
+						<div class="form-group label-formulario">
+							<label for="categoria">Categoria</label>
+							<select 
+								class="form-control"
+								name="categoria" 
+								id="categoria" 
+								ng-model="cadastro.categoria"
+								ng-class="{ error: formulario.categoria.$invalid &&  ( formulario.$submitted || formulario.categoria.$touched ) }" 
+								required>
+									<option>Enlatados</option>
+									<option>Cereais</option>
+									<option>Pereciveis</option>                                    
+							</select> 
+							<span class="form‐control text-red" ng-show="formulario.categoria.$invalid &&  ( formulario.$submitted || formulario.categoria.$touched )">
+									Campo Obrigatório 
+							</span>
+						</div>
+					</div>
+				
+				</div>
+				
+				<div class="col-xs-12 col-md-12 btn-crud">
+						<!-- ng-disabled="formulario.$invalid" -->
+					<button  type="submit" class="btn btn-primary">Salvar</button>
+					<a href="#/codigos" class="btn btn-default">Voltar</a>
+					<!--<button  ng-click="remover(alimento)"type="button" class="btn btn-danger">Delete</button>-->
+				</div>
+    	</form>
+    </div>
+</div>
