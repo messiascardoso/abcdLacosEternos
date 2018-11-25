@@ -74,23 +74,23 @@ angular.module('abcdlacosEternos', ['ngResource', 'ui.router', 'ui.mask', 'ngFil
                     url: '/cliente/:clienteId',
                     templateUrl: 'partials/cliente.html',
                     controller: 'ClienteController',
-								})
-								
-								.state('dash.codigos', {
-									url: '/codigos',
-									templateUrl: 'partials/codigos.html',
-									controller: 'CodigosController'
-								})
-								.state('dash.codigo', {
-										url: '/codigo',
-										templateUrl: 'partials/codigo.html',
-										controller: 'CodigoController',
-								})
-								.state('dash.codigo/:codigoId', {
-										url: '/codigo/:codigoId',
-										templateUrl: 'partials/codigo.html',
-										controller: 'CodigoController',
-								})
+                })
+                
+                .state('dash.codigos', {
+                    url: '/codigos',
+                    templateUrl: 'partials/codigos.html',
+                    controller: 'CodigosController'
+                })
+                .state('dash.codigo', {
+                        url: '/codigo',
+                        templateUrl: 'partials/codigo.html',
+                        controller: 'CodigoController',
+                })
+                .state('dash.codigo/:codigoId', {
+                        url: '/codigo/:codigoId',
+                        templateUrl: 'partials/codigo.html',
+                        controller: 'CodigoController',
+                })
                 .state('dash.alimentos', {
                     url: '/alimentos',
                     templateUrl: 'partials/alimentos.html',

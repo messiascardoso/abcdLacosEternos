@@ -20,13 +20,4 @@ angular.module('abcdlacosEternos').service('AlimentoServices', function ($http) 
       return $http.delete("/alimentos/"+ alimentoId);
     };
 
-    
-
-
-   
-
-
-
-
-
 });

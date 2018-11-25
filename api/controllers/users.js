@@ -26,83 +26,34 @@ module.exports = function (app) {
         var coordenadas = [];
         if (!form) {
 					if (req.body.email && req.body.profile) {
-						switch (req.body.profile) {
-							case 'PARTNER':
-								// Partner.create(partner_new)
-								// 	.then(
-								// 	function (partner) {
-								// 			partner_new = partner;
-								// 			//Create user com Id_Partner
+						var password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(5), null);
+						var userNew = {
+								"email": req.body.email,
+								"password": password,
+								"name": req.body.name,
+								"note": req.body.note,
+								"provider": req.body.provider,
+								"profile": [req.body.profile],
+								"status": true
+						};
 
-								// 			var password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(5), null);
-								// 			var userNew = {
-								// 					"email": req.body.email,
-								// 					"password": password,
-								// 					"name": req.body.name,
-								// 					"note": req.body.note,
-								// 					"provider": req.body.provider,
-								// 					"email2": req.body.email2,
-								// 					"profile": [req.body.profile],
-								// 					"partner_id": partner_new._id,
-								// 					"status": true
-
-								// 			};
-								// 			if (userNew.email) {
-								// 					User.create(userNew)
-								// 							.then(
-								// 							function (users) {
-								// 									res.status(201).end();
-								// 							},
-								// 							function (erro) {
-								// 									console.log("MongoDB=" + erro.message);
-								// 									res.status(500).json(erro.message);
-								// 							}
-								// 							);
-								// 					//Fim Create User
-								// 			};
-
-								// 	},
-								// 	function (erro) {
-								// 		console.log("MongoDB=" + erro.message);
-								// 		res.status(500).json(erro.message);
-								// 	}
-								// 	);
-									break;
-							case 'ADMIN':
-								var password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(5), null);
-								var userNew = {
-										"email": req.body.email,
-										"password": password,
-										"name": req.body.name,
-										"note": req.body.note,
-										"provider": req.body.provider,
-										"profile": [req.body.profile],
-										"status": true
-								};
-
-								if (userNew.email) {
-									User.create(userNew)
-										.then(
-										function (users) {
-											res.status(201).end();
-										},
-										function (erro) {
-											console.log("MongoDB=" + erro.message);
-											res.status(500).json(erro.message);
-										}
-										);
-								};
-								break;
-								default:
-										break;
-						}
+						if (userNew.email) {
+							User.create(userNew)
+								.then(
+								function (users) {
+									res.status(201).end();
+								},
+								function (erro) {
+									console.log("MongoDB=" + erro.message);
+									res.status(500).json(erro.message);
+								}
+								);
+						};
 					}
         } else {
             res.send("Objeto vazio");
         }
     };
-
-   
     controller.delUser = function (req, res) {
 			var _id = req.params.id;
 			User.remove({ "_id": _id }).exec()

@@ -11,11 +11,11 @@ angular.module('abcdlacosEternos').controller('PerfilController',
     $scope.profile = Profile;
 
     //View email/profile to user logado
-    $scope.UserProfile = userTogo;
+    $scope.userProfile = userTogo;
 
-    angular.element('nav .sidebar-toggle ').click(function() {
-        angular.element( '.sidebar-mini' ).toggleClass('sidebar-collapse');
-    });
+    // angular.element('nav .sidebar-toggle ').click(function() {
+    //     angular.element( '.sidebar-mini' ).toggleClass('sidebar-collapse');
+    // });
 
 
     // $( "p" ).click(function() {
